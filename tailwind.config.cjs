@@ -21,6 +21,7 @@ module.exports = {
 			'3xl': '1.4375rem', // 23px
 			'4xl': '1.5rem', // 24px
 			'6xl': '1.625rem', // 26px
+			'8xl': '2.25rem', // 38px
 			'9xl': '2.5rem', // 40px
 		},
 
@@ -46,6 +47,7 @@ module.exports = {
 
 			spacing: {
 				22: '5.625rem', // 90px
+				26: '100px',
 			}
 
 		},

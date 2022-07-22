@@ -1,12 +1,9 @@
 ---
 import '@/styles/app.scss';
+import Nav from '@/components/base/Nav.vue';
+import Footer from '@/components/base/Footer.vue';
 
-
-export interface Props {
-	title: string;
-}
-
-const { title } = Astro.props as Props;
+const { title, bodyClasses } = Astro.props;
 ---
 
 <html lang="en">
@@ -17,9 +14,19 @@ const { title } = Astro.props as Props;
     <title>{ title }</title>
   </head>
 
-  <body>
+  <body class={ bodyClasses }>
 
-	  <slot></slot>
+    <Nav client:load></Nav>
+
+    <slot name="header"></slot>
+
+    <main class="max-w-[1256px] mx-auto px-3 py-14">
+
+      <slot></slot>
+
+    </main>
+
+    <Footer client:load></Footer>
 
   </body>
 </html>

@@ -1,37 +1,21 @@
 <script setup>
-import logo from '@img/logo-pretux.svg';
+import Hero from '@/components/Hero.vue';
+import { ref, onMounted } from 'vue';
+
+const data = ref();
+
+onMounted(async () => {
+
+    data.value = await fetch(
+        'https://api.storyblok.com/v2/cdn/stories/home?version=draft&token=Zy0MFblgvdpEgCvnyOVhmAtt'
+    ).then((response) => response.json()).then((resp) => resp.story.content)
+})
 
 </script>
 
 <template>
 
-<header class="bg-black-600 py-4 font-heading">
-    <nav class="flex justify-between items-center max-w-[1256px] mx-auto px-3">
-        <img :src="logo" alt="" class=""/>
-        <ul class="nav flex items-center justify-center gap-12 font-semibold text-white text-2xl">
-            <li><a href="/" class=""> Login </a></li>
-            <li><a href="/" class="active"> Home </a></li>
-            <li><a href="/" class=""> Sobre </a></li>
-            <li><a href="/" class=""> Quero Ajudar </a></li>
-            <li><a href="/" class=""> Serviços </a></li>
-            <li><a href="/" class=""> Contatos </a></li>
-        </ul>
-    </nav>
-</header>
-
-<!-- hero -->
-<section class="bg-[url('src/assets/img/two-guys.png')] bg-center bg-cover bg-no-repeat px-10 py-48 text-white">
-    <div class="max-w-[433px]">
-        <h1 class="font-bold text-display text-9xl mb-2.5">Pretux</h1>
-        <p class="leading-tight mb-5 text-3xl">
-            Somos uma comunidade que oferece apoio, direcionamento, mentoria e qualificação para os profissionais pretos de UX.
-        </p>
-
-        <a href="/" class="btn--primary">
-            Seja membro
-        </a>
-    </div>
-</section>
+<Hero></Hero>
 
 <!-- main -->
 <main class="max-w-[1256px] mx-auto px-3 pt-14">
@@ -76,32 +60,6 @@ import logo from '@img/logo-pretux.svg';
     </section>
 </main>
 
-<footer class="bg-black-800 py-14">
-    <div class="max-w-[1256px] mx-auto px-3 flex justify-between items-start">
-        <img src="@/assets/img/logo-pretux.svg" alt="" class="w-[245px]"/>
-
-        <div class="flex gap-16 mx-auto text-white text-3xl">
-            <ul class="">
-                <h1 class="font-bold mb-8">No Site</h1>
-                <li><a href="" class="">Pagina Inicial</a></li>
-                <li><a href="" class="">Sobre</a></li>
-                <li><a href="" class="">Quero Ajudar</a></li>
-                <li><a href="" class="">Serviços</a></li>
-            </ul>
-            <ul class="">
-                <h1 class="font-bold mb-8">No Rede</h1>
-                <li><a href="" class="">Linkedin</a></li>
-                <li><a href="" class="">Instagram</a></li>
-                <li><a href="" class="">Facebook</a></li>
-                <li><a href="" class="">Medium</a></li>
-            </ul>
-            <ul class="">
-                <h1 class="font-bold mb-8">Contato</h1>
-                <li><a href="mailto:somos@pretux.com.br" class="">somos@pretux.com.br</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
 </template>
 
 <style lang="scss">

@@ -1,0 +1,73 @@
+---
+//components
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+//images
+import meninaComputador from '@img/menina-no-computador.png';
+
+
+//data
+const data = {
+	form: {
+		title: "Como ajudar?",
+        description: "O PretUX é um espaço aberto para pessoas interessadas em ajudar das mais diversas formas. Quer compartilhar conhecimento, mentorar ou ajudar designers pretes? Clique no botão ajudar!<span class='block mt-3'>Além das formas já citadas é possível nos ajudar com:</span>",
+	}
+}
+
+---
+
+<BaseLayout title="Quero Ajudar">
+
+<!-- two col wrapper -->
+	<section class="flex items-start justify-between gap-10 py-28 px-26">
+		<img src={meninaComputador} alt="" class="flex-shrink-0 max-w-[420px] w-full rounded-xl" />
+
+		<div class="flex-grow">
+			<div class="mb-5 text-3xl">
+				<h1 class="alpha mb-4">
+					{data.form.title}
+				</h1>
+				<p set:html={data.form.description}></p>
+			</div>
+
+			<form class="flex flex-col gap-4 text-black-600">
+				<fieldset class="border-black-600 border-2 mb-2.5 px-4 py-1 rounded-xl">
+					<legend class="font-bold px-1">Nome</legend>
+					<input class="pb-3 px-3 w-full opacity-100 focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado" />
+				</fieldset>
+				<div class="flex gap-4">
+					<fieldset class="border-black-600 border-2 mb-2.5 px-4 py-1 rounded-xl">
+						<legend class="font-bold px-1">Email</legend>
+						<input class="pb-3 px-3 w-full opacity-100 focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" />
+					</fieldset>
+					<fieldset class="border-black-600 border-2 mb-2.5 px-4 py-1 rounded-xl">
+						<legend class="font-bold px-1">Telefone</legend>
+						<input class="pb-3 px-3 w-full opacity-100 focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
+					</fieldset>
+				</div>
+				
+				<!-- add multiselect field -->
+				
+				<fieldset class="border-black-600 border-2 mb-2.5 px-4 py-1 rounded-xl">
+					<legend class="font-bold px-1">Mensagem</legend>
+					<textarea class="pb-3 px-3 w-full opacity-100 focus-visible:outline-none" rows="5" name="telefone" placeholder="Informe como você pode ajudar" />
+				</fieldset>
+
+				<button class="btn--secondary w-fit">Ajudar</button>
+
+			</form>
+		</div>
+	</section>
+
+</BaseLayout>
+
+
+
+<style lang="scss">
+
+.bg-blend {
+	background: url('/src/assets/img/girl-1.png'),linear-gradient(to right bottom, black, transparent);
+	background-blend-mode: multiply;
+}
+
+</style>

@@ -1,10 +1,169 @@
 ---
+//components
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Home from '@/components/Home.vue';
+import Hero from '@/components/Hero.vue';
+
+//images
+import logo from '@img/logo-pretux.svg';
+import resultados from '@img/resultados.png';
+import maeEfilho from '@img/mae-e-filho.png';
+import bgPattern from '@img/cta-bg.jpg';
+const ctaBg = `background-image: url('${bgPattern}')`;
+
+//data
+const data = {
+	hero: {
+		title: 'Pretux',
+        subtitle: 'Somos uma comunidade que oferece apoio, direcionamento, mentoria e qualificação para os profissionais pretos de UX.',
+        button: {
+            url: 'google.com',
+            label: 'Seja membro'
+        },
+		image: 'src/assets/img/hero-home.png'
+	}
+}
+
 ---
 
 <BaseLayout title="Pretux">
 
-	<Home></Home>
+
+	<Hero data={data.hero} slot="header"></Hero>
+
+
+    <section class="bg-white mb-22">
+		<h1 class="alpha mb-11 text-center">
+			O que fazemos:
+		</h1>
+        <div class="flex gap-10 justify-between">
+			<div class="max-w-[257px] mx-auto">
+				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
+					<p class="font-bold text-white">Bolsa de estudos</p>
+				</div>
+				<p class="text-black-600 text-lg">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
+				</p>
+			</div>
+			<div class="max-w-[257px] mx-auto">
+				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
+					<p class="font-bold text-white">Bolsa de estudos</p>
+				</div>
+				<p class="text-black-600 text-lg">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
+				</p>
+			</div>
+			<div class="max-w-[257px] mx-auto">
+				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
+					<p class="font-bold text-white">Bolsa de estudos</p>
+				</div>
+				<p class="text-black-600 text-lg">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
+				</p>
+			</div>
+			<div class="max-w-[257px] mx-auto">
+				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
+					<p class="font-bold text-white">Bolsa de estudos</p>
+				</div>
+				<p class="text-black-600 text-lg">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
+				</p>
+			</div>
+		</div>
+    </section>
+
+
+    <section class="mb-26">
+		<h1 class="alpha mb-11 text-center">
+			Resultados
+		</h1>
+		<div class="">
+			<img src={resultados} alt="" class="mb-12"/>
+
+			<div class="flex flex-wrap">
+				<div class="basis-1/4 max-w-[284px] text-center">
+					<p class="font-bold text-8xl">
+						+ de 900
+					</p>
+					<p class="font-bold">
+						bolsas distribuidas
+					</p>
+					em 2 anos
+				</div>
+				<div class="basis-1/4 max-w-[284px] text-center">
+					<p class="font-bold text-8xl">
+						200
+					</p>
+					<p class="font-bold">
+						pessoas pretas
+					</p>
+					mentoradas
+				</div>
+				<div class="basis-1/4 max-w-[284px] text-center">
+					<p class="font-bold text-8xl">
+						+ de 50
+					</p>
+					<p class="font-bold">
+						eventos exclusivos
+					</p>
+					para pessoas pretas
+				</div>
+				<div class="basis-1/4 max-w-[284px] text-center">
+					<p class="font-bold text-8xl">
+						+ de 50
+					</p>
+					<p class="font-bold">
+						rodas de conversas
+					</p>
+					para pessoas pretas
+				</div>
+			</div>
+		</div>
+    </section>
+
+	<!-- cta-big -->
+	<section class="flex items-center justify-between gap-10 py-28 px-26 text-white" style={ctaBg}>
+		<img src={maeEfilho} alt="" class="flex-shrink-0 max-w-[420px] w-full" />
+
+		<div class="flex-grow">
+			<div class="mb-20">
+				<h1 class="alpha mb-4 text-white">
+					Nossa Missão
+				</h1>
+				<p class="mb-10">
+					Trabalhamos para aumentar a inserção de pessoas pretas no mercado de trabalho, diversificar a tecnologia brasileira e difundir conhecimeto de UX.
+					<span class="mb-5"></span>
+					Vamos juntos trabalhar por mais representatividade.
+				</p>
+				<a href="/" class="btn--primary">
+					Quero Ajudar
+				</a>
+			</div>
+
+			<div>
+				<h1 class="alpha text-white">
+					Empresas que já estão conosco:
+				</h1>
+
+
+				<div class="flex">
+					<img src={logo} class="w-[192px] h-[152px] object-contain object-center" alt=""/>
+					<img src={logo} class="w-[192px] h-[152px] object-contain object-center" alt=""/>
+					<img src={logo} class="w-[192px] h-[152px] object-contain object-center" alt=""/>
+				</div>
+
+			</div>
+		</div>
+	</section>
 
 </BaseLayout>
+
+
+
+<style lang="scss">
+
+.bg-blend {
+	background: url('/src/assets/img/girl-1.png'),linear-gradient(to right bottom, black, transparent);
+	background-blend-mode: multiply;
+}
+
+</style>
