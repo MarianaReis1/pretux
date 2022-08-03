@@ -1,7 +1,7 @@
 ---
 //components
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Hero from '@/components/Hero.vue';
+import Hero from '@/components/Hero.astro';
 
 //images
 import meninaComputador from '@img/menina-no-computador.png';
@@ -10,21 +10,15 @@ import meninaComputador from '@img/menina-no-computador.png';
 const data = {
 	hero: {
 		title: "Serviços",
-        subtitle: "Nossa comunidade possui profissionais cobiçados de empresas como Nubank, AMBEV Tech, Itaú, Grupo Fleury e iFood. Além da diversidade em gêneros, orientação sexual e background, encontramos também a diversidade geográfica e de tempo de carreira.",
-		image: 'src/assets/img/hero-servicos.png'
+        subtitle: 'Nossa comunidade possui profissionais cobiçados de empresas como <span class="font-bold">Nubank, AMBEV Tech, Itaú, Grupo Fleury e iFood</span>. Além da diversidade em gêneros, orientação sexual e background, encontramos também a diversidade geográfica e de tempo de carreira.',
+		image: '/img/hero-servicos.png'
 	}
 }
 
 ---
 
-<BaseLayout bodyClasses="bg-black-600" title="Sobre">
+<BaseLayout title="Sobre">
 
 	<Hero data={data.hero} slot="header"></Hero>
-
-	<h1 class="alpha mb-11 text-white text-center">
-		Quem somos
-	</h1>
-
-	<div class="bg-black-800 p-16 w-full"></div>
 
 </BaseLayout>

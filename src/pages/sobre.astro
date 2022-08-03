@@ -1,9 +1,12 @@
 ---
 //components
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import IniciativasGrid from '@/components/js/IniciativasGrid.vue';
 
 //images
 import meninaComputador from '@img/menina-no-computador.png';
+import jeff from '@img/equipe-jeff.png';
+import renato from '@img/equipe-renato.png';
 
 
 //data
@@ -17,12 +20,150 @@ const data = {
 
 ---
 
-<BaseLayout bodyClasses="bg-black-600" title="Sobre">
+<BaseLayout title="Sobre">
 
-	<h1 class="alpha mb-11 text-white text-center">
-		Quem somos
-	</h1>
+	<main class="mt-20">
+		<h1 class="alpha mb-11 text-center">
+			Quem somos
+		</h1>
+		<section class="mb-22 max-w-[1244px] mx-auto">
+			<div class="bg-black-800 flex justify-between items-start gap-14 mb-12 p-16 rounded-xl w-full">
+				<img src={jeff} alt="" class="max-w-[455px] rounded-xl w-full"/>
+				<div class="max-w-[594px] w-full">
+					<h1 class="alpha mb-5">
+						Sou o Jeff! Cresci em uma região humilde do Rio de Janeiro, fundador da PretUx
+					</h1>
+					<p class="text-3xl">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</div>
+			<div class="bg-black-800 flex flex-row-reverse justify-between items-start gap-14 mb-12 p-16 rounded-xl w-full">
+				<img src={renato} alt="" class="max-w-[455px] rounded-xl w-full"/>
+				<div class="max-w-[594px] w-full">
+					<h1 class="alpha mb-5">
+						Sou o Renato, tenho convicção que o Design pode mudar o mundo!
+					</h1>
+					<p class="text-3xl">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</div>
+		</section>
 
-	<div class="bg-black-800 p-16 w-full"></div>
+
+		<section class="border-b border-white/20 max-w-[1244px] mx-auto px-3 pb-26">
+			<h1 class="alpha mb-11 text-center">
+				Nossa Equipe
+			</h1>
+			<div class="flex flex-wrap gap-12 justify-center mx-auto mb-12">
+				<div class="bg-[url('/src/assets/img/equipe-maria.png')] max-w-[354px] p-6 w-full h-[441px] rounded-lg">
+					<div class="bg-white border border-black-800 p-2 rounded w-fit">
+						Ux Reserach
+					</div>
+					<div class="">
+						<p class="text-2xl">Maria Santos</p>
+						<p class="text-md">Ux Reserch Junior</p>
+						<div class="border-t-[3px] my-4 w-1/4"></div>
+						<p>Brasil - Belo Horizonte</p>
+					</div>
+				</div>
+				<div class="bg-[url('/src/assets/img/equipe-maria.png')] max-w-[354px] p-6 w-full h-[441px] rounded-lg">
+					<div class="bg-white border border-black-800 p-2 rounded w-fit">
+						Ux Reserach
+					</div>
+					<div class="">
+						<p class="text-2xl">Maria Santos</p>
+						<p class="text-md">Ux Reserch Junior</p>
+						<div class="border-t-[3px] my-4 w-1/4"></div>
+						<p>Brasil - Belo Horizonte</p>
+					</div>
+				</div>
+				<div class="bg-[url('/src/assets/img/equipe-maria.png')] max-w-[354px] p-6 w-full h-[441px] rounded-lg">
+					<div class="bg-white border border-black-800 p-2 rounded w-fit">
+						Ux Reserach
+					</div>
+					<div class="">
+						<p class="text-2xl">Maria Santos</p>
+						<p class="text-md">Ux Reserch Junior</p>
+						<div class="border-t-[3px] my-4 w-1/4"></div>
+						<p>Brasil - Belo Horizonte</p>
+					</div>
+				</div>
+				<div class="bg-[url('/src/assets/img/equipe-maria.png')] max-w-[354px] p-6 w-full h-[441px] rounded-lg">
+					<div class="bg-white border border-black-800 p-2 rounded w-fit">
+						Ux Reserach
+					</div>
+					<div class="">
+						<p class="text-2xl">Maria Santos</p>
+						<p class="text-md">Ux Reserch Junior</p>
+						<div class="border-t-[3px] my-4 w-1/4"></div>
+						<p>Brasil - Belo Horizonte</p>
+					</div>
+				</div>
+				<div class="bg-[url('/src/assets/img/equipe-maria.png')] max-w-[354px] p-6 w-full h-[441px] rounded-lg">
+					<div class="bg-white border border-black-800 p-2 rounded w-fit">
+						Ux Reserach
+					</div>
+					<div class="">
+						<p class="text-2xl">Maria Santos</p>
+						<p class="text-md">Ux Reserch Junior</p>
+						<div class="border-t-[3px] my-4 w-1/4"></div>
+						<p>Brasil - Belo Horizonte</p>
+					</div>
+				</div>
+				<div class="bg-[url('/src/assets/img/equipe-maria.png')] max-w-[354px] p-6 w-full h-[441px] rounded-lg">
+					<div class="bg-white border border-black-800 p-2 rounded w-fit">
+						Ux Reserach
+					</div>
+					<div class="">
+						<p class="text-2xl">Maria Santos</p>
+						<p class="text-md">Ux Reserch Junior</p>
+						<div class="border-t-[3px] my-4 w-1/4"></div>
+						<p>Brasil - Belo Horizonte</p>
+					</div>
+				</div>
+				<div class="bg-[url('/src/assets/img/equipe-maria.png')] max-w-[354px] p-6 w-full h-[441px] rounded-lg">
+					<div class="bg-white border border-black-800 p-2 rounded w-fit">
+						Ux Reserach
+					</div>
+					<div class="">
+						<p class="text-2xl">Maria Santos</p>
+						<p class="text-md">Ux Reserch Junior</p>
+						<div class="border-t-[3px] my-4 w-1/4"></div>
+						<p>Brasil - Belo Horizonte</p>
+					</div>
+				</div>
+				<div class="bg-[url('/src/assets/img/equipe-maria.png')] max-w-[354px] p-6 w-full h-[441px] rounded-lg">
+					<div class="bg-white border border-black-800 p-2 rounded w-fit">
+						Ux Reserach
+					</div>
+					<div class="">
+						<p class="text-2xl">Maria Santos</p>
+						<p class="text-md">Ux Reserch Junior</p>
+						<div class="border-t-[3px] my-4 w-1/4"></div>
+						<p>Brasil - Belo Horizonte</p>
+					</div>
+				</div>
+				<div class="bg-[url('/src/assets/img/equipe-maria.png')] max-w-[354px] p-6 w-full h-[441px] rounded-lg">
+					<div class="bg-white border border-black-800 p-2 rounded w-fit">
+						Ux Reserach
+					</div>
+					<div class="">
+						<p class="text-2xl">Maria Santos</p>
+						<p class="text-md">Ux Reserch Junior</p>
+						<div class="border-t-[3px] my-4 w-1/4"></div>
+						<p>Brasil - Belo Horizonte</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex items-center justify-center">
+				<button class="btn--quaternary mx-auto">Mostar Mais</button>
+			</div>
+		</section>
+	</main>
+
+
+	<IniciativasGrid></IniciativasGrid>
 
 </BaseLayout>

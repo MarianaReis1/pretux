@@ -21,6 +21,7 @@ module.exports = {
 			'3xl': '1.4375rem', // 23px
 			'4xl': '1.5rem', // 24px
 			'6xl': '1.625rem', // 26px
+			'7xl': '2rem', // 32px
 			'8xl': '2.25rem', // 38px
 			'9xl': '2.5rem', // 40px
 		},
@@ -35,8 +36,10 @@ module.exports = {
 
 			colors: {
 				black: {
+					DEFAULT: '#000000',
 					400: '#212121',
 					600: '#2B2B2B',
+					700: '#C4C4C4',
 					800: '#404040'
 				},
 
@@ -46,6 +49,7 @@ module.exports = {
 			},
 
 			spacing: {
+				13: '50px', // 90px
 				22: '5.625rem', // 90px
 				26: '100px',
 			}

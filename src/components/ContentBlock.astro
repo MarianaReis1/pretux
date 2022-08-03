@@ -1,0 +1,11 @@
+---
+const { extraClasses } = Astro.props;
+---
+
+<section class={`${extraClasses}`}>
+    <div class="max-w-[1256px] mx-auto px-3 py-14">
+
+        <slot></slot>
+
+    </div>
+</section>

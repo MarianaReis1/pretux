@@ -9,7 +9,7 @@ import logo from '@img/logo-pretux.svg';
     <div class="max-w-[1256px] mx-auto px-3 flex justify-between items-start">
         <img :src="logo" alt="" class="w-[245px]"/>
 
-        <div class="flex gap-16 mx-auto text-white text-3xl">
+        <div class="flex gap-16 mx-auto text-3xl">
             <ul class="">
                 <h1 class="font-bold mb-8">No Site</h1>
                 <li><a href="" class="">Pagina Inicial</a></li>

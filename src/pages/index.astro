@@ -1,14 +1,15 @@
 ---
 //components
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Hero from '@/components/Hero.vue';
+import Hero from '@/components/Hero.astro';
+import ContentBlock from '@/components/ContentBlock.astro';
+import CTACarousel from '@/components/js/CTACarousel.vue';
+import SectionCarousel from '@/components/js/SectionCarousel.vue';
+import IniciativasGrid from '@/components/js/IniciativasGrid.vue';
+import HeadingAlpha from '@/components/js/HeadingAlpha.vue';
 
 //images
-import logo from '@img/logo-pretux.svg';
 import resultados from '@img/resultados.png';
-import maeEfilho from '@img/mae-e-filho.png';
-import bgPattern from '@img/cta-bg.jpg';
-const ctaBg = `background-image: url('${bgPattern}')`;
 
 //data
 const data = {
@@ -16,29 +17,74 @@ const data = {
 		title: 'Pretux',
         subtitle: 'Somos uma comunidade que oferece apoio, direcionamento, mentoria e qualificação para os profissionais pretos de UX.',
         button: {
-            url: 'google.com',
-            label: 'Seja membro'
+            url: 'https://google.com',
+            label: 'Seja membro',
+			style: 'primary'
         },
-		image: 'src/assets/img/hero-home.png'
+		image: '/img/hero-home.png'
+	},
+	features: {
+		title: 'O que fazemos:',
+		items: [
+			{
+				title: 'Bolsa de estudos',
+				description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus esse enim excepturi itaque ab doloribus quisquam sit? Porro molestiae officia quis vitae commodi dolorem a! Sint temporibus error corporis accusamus',
+				image: '/img/girl-1.png'
+			},
+			{
+				title: 'Bolsa de estudos',
+				description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus esse enim excepturi itaque ab doloribus quisquam sit? Porro molestiae officia quis vitae commodi dolorem a! Sint temporibus error corporis accusamus',
+				image: '/img/girl-1.png'
+			},
+			{
+				title: 'Bolsa de estudos',
+				description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus esse enim excepturi itaque ab doloribus quisquam sit? Porro molestiae officia quis vitae commodi dolorem a! Sint temporibus error corporis accusamus',
+				image: '/img/girl-1.png'
+			},
+			{
+				title: 'Bolsa de estudos',
+				description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus esse enim excepturi itaque ab doloribus quisquam sit? Porro molestiae officia quis vitae commodi dolorem a! Sint temporibus error corporis accusamus',
+				image: '/img/girl-1.png'
+			}
+		]
+	},
+	statistics: {},
+	ctaCarousel : {
+		bkgImg: '/img/cta-bg.jpg',
+		sideImg: '/img/mae-e-filho.png',
+		title: 'Nossa Missao',
+		description: 'Trabalhamos para aumentar a inserção de pessoas pretas no mercado de trabalho, diversificar a tecnologia brasileira e difundir conhecimeto de UX. <br/><br/>vamos juntos trabalhar por mais representatividade.',
+		button: {
+            url: 'google.com',
+            label: 'Seja membro',
+			style: 'primary'
+        },
+		carousel: {
+			title: 'Empresas que já estão conosco:',
+			items: [
+				'/img/logo-pretux.png',
+				'/img/logo-pretux.png',
+				'/img/logo-pretux.png'
+			]
+		}
+
 	}
 }
 
 ---
 
-<BaseLayout title="Pretux">
-
+<BaseLayout title="Home">
 
 	<Hero data={data.hero} slot="header"></Hero>
 
-
-    <section class="bg-white mb-22">
-		<h1 class="alpha mb-11 text-center">
+    <ContentBlock extraClasses="bg-white">
+		<HeadingAlpha class="mb-11 text-center">
 			O que fazemos:
-		</h1>
-        <div class="flex gap-10 justify-between">
+		</HeadingAlpha>
+		<div class="flex gap-10 justify-between">
 			<div class="max-w-[257px] mx-auto">
 				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
-					<p class="font-bold text-white">Bolsa de estudos</p>
+					<p class="font-bold">Bolsa de estudos</p>
 				</div>
 				<p class="text-black-600 text-lg">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
@@ -46,7 +92,7 @@ const data = {
 			</div>
 			<div class="max-w-[257px] mx-auto">
 				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
-					<p class="font-bold text-white">Bolsa de estudos</p>
+					<p class="font-bold">Bolsa de estudos</p>
 				</div>
 				<p class="text-black-600 text-lg">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
@@ -54,7 +100,7 @@ const data = {
 			</div>
 			<div class="max-w-[257px] mx-auto">
 				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
-					<p class="font-bold text-white">Bolsa de estudos</p>
+					<p class="font-bold">Bolsa de estudos</p>
 				</div>
 				<p class="text-black-600 text-lg">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
@@ -62,24 +108,25 @@ const data = {
 			</div>
 			<div class="max-w-[257px] mx-auto">
 				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
-					<p class="font-bold text-white">Bolsa de estudos</p>
+					<p class="font-bold">Bolsa de estudos</p>
 				</div>
 				<p class="text-black-600 text-lg">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
 				</p>
 			</div>
 		</div>
-    </section>
+
+    </ContentBlock>
 
 
-    <section class="mb-26">
-		<h1 class="alpha mb-11 text-center">
+	<ContentBlock extraClasses="bg-white">
+		<HeadingAlpha class="mb-11 text-center">
 			Resultados
-		</h1>
+		</HeadingAlpha>
 		<div class="">
 			<img src={resultados} alt="" class="mb-12"/>
 
-			<div class="flex flex-wrap">
+			<div class="flex flex-wrap font-display text-black">
 				<div class="basis-1/4 max-w-[284px] text-center">
 					<p class="font-bold text-8xl">
 						+ de 900
@@ -118,42 +165,13 @@ const data = {
 				</div>
 			</div>
 		</div>
-    </section>
+	</ContentBlock>
 
-	<!-- cta-big -->
-	<section class="flex items-center justify-between gap-10 py-28 px-26 text-white" style={ctaBg}>
-		<img src={maeEfilho} alt="" class="flex-shrink-0 max-w-[420px] w-full" />
+	<CTACarousel client:load data={data.ctaCarousel} ></CTACarousel>
 
-		<div class="flex-grow">
-			<div class="mb-20">
-				<h1 class="alpha mb-4 text-white">
-					Nossa Missão
-				</h1>
-				<p class="mb-10">
-					Trabalhamos para aumentar a inserção de pessoas pretas no mercado de trabalho, diversificar a tecnologia brasileira e difundir conhecimeto de UX.
-					<span class="mb-5"></span>
-					Vamos juntos trabalhar por mais representatividade.
-				</p>
-				<a href="/" class="btn--primary">
-					Quero Ajudar
-				</a>
-			</div>
+	<SectionCarousel></SectionCarousel>
 
-			<div>
-				<h1 class="alpha text-white">
-					Empresas que já estão conosco:
-				</h1>
-
-
-				<div class="flex">
-					<img src={logo} class="w-[192px] h-[152px] object-contain object-center" alt=""/>
-					<img src={logo} class="w-[192px] h-[152px] object-contain object-center" alt=""/>
-					<img src={logo} class="w-[192px] h-[152px] object-contain object-center" alt=""/>
-				</div>
-
-			</div>
-		</div>
-	</section>
+	<IniciativasGrid></IniciativasGrid>
 
 </BaseLayout>
 
