@@ -36,7 +36,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.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 }}
+          github_token: ${{ secrets.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 }}
           # `./dist` is the default Astro build directory.
           # If you changed that, update it here too.
           publish_dir: ./dist
