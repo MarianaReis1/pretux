@@ -6,5 +6,4 @@ import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
   integrations: [vue(), tailwind()],
-  build: { format: 'file' },
 });
