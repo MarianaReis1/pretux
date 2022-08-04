@@ -19,8 +19,8 @@
 
 <script setup>
 
-import CarouselBase from '@/components/js/CarouselBase.vue';
-import CTACarouselItem from '@/components/js/CTACarouselItem.vue';
+import CarouselBase from '@/components/CarouselBase.vue';
+import CTACarouselItem from '@/components/CTACarouselItem.vue';
 
 
 </script>
