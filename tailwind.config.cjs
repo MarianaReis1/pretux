@@ -4,7 +4,8 @@ module.exports = {
 	theme: {
 
 		screens: {
-			'2xl': {'max': '1200px'},
+			'5xl': {'max': '1260px'},
+			'3xl': {'max': '1150px'},
 			'xl': {'max': '1024px'},
 			'lg': {'max': '960px'},
 			'md': {'max': '767px'},
@@ -14,8 +15,8 @@ module.exports = {
 		fontSize: {
 			'xxs': '.75rem', // 12px
 			'xs': '.875rem', // 14px
-			'sm': '1rem', // 16px
-			'base': '1.125rem', // 18px
+			'base': '1rem', // 16px
+			'md': '1.125rem', // 18px
 			'lg': '1.25rem', // 20px
 			'2xl': '1.375rem', // 22px
 			'3xl': '1.4375rem', // 23px

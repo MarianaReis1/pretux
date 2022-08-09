@@ -23,11 +23,11 @@
 
 
                 <CarouselBase class="max-w-850px" :items-to-show="3" :wrap-around="true" >
-                    <CTACarouselItem  image="/src/assets/img/logo-pretux.png"></CTACarouselItem>
+                    <!-- <CTACarouselItem  image="/src/assets/img/logo-pretux.png"></CTACarouselItem>
                     <CTACarouselItem  image="/src/assets/img/equipe-jeff.png"></CTACarouselItem>
                     <CTACarouselItem  image="/src/assets/img/logo-pretux.png"></CTACarouselItem>
                     <CTACarouselItem  image="/src/assets/img/equipe-maria.png"></CTACarouselItem>
-                    <CTACarouselItem  image="/src/assets/img/logo-pretux.png"></CTACarouselItem>
+                    <CTACarouselItem  image="/src/assets/img/logo-pretux.png"></CTACarouselItem> -->
                 </CarouselBase>
             </div>
         </div>
@@ -37,7 +37,7 @@
 <script setup>
 
 import CarouselBase from '@/components/CarouselBase.vue';
-import CTACarouselItem from '@/components/CTACarouselItem.vue';
+// import CTACarouselItem from '@/components/CTACarouselItem.vue';
 
 const props = defineProps({ data: { type: Object } })
 

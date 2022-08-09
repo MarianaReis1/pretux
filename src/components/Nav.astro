@@ -3,7 +3,6 @@
 import logo from '@img/logo-pretux.svg';
 
 const currentPath = new URL(Astro.request.url).pathname.slice(1);
-console.log(currentPath)
 
 ---
 
@@ -16,7 +15,7 @@ console.log(currentPath)
             <li><a href="/sobre" class={currentPath === "sobre" && "active" + " nav__item"}> Sobre </a></li>
             <li><a href="/quero-ajudar" class={currentPath === "quero-ajudar" && "active" + " nav__item"}> Quero Ajudar </a></li>
             <li><a href="/servicos" class={currentPath === "servicos" && "active" + " nav__item"}> Serviços </a></li>
-            <!-- <li><a href="#contato"> Contatos </a></li> -->
+            <li><a href="#contato"> Contatos </a></li>
         </ul>
     </section>
 </nav>

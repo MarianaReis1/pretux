@@ -1,55 +1,25 @@
 ---
+import { init } from '../prismic.js'
+
 //components
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
-import ContentBlock from '@/components/ContentBlock.astro';
-import CTACarousel from '@/components/CTACarousel.vue';
-import SectionCarousel from '@/components/SectionCarousel.vue';
+import ContentBlock from '@/components/ContentBlock.vue';
+import Fazemos from '@/components/Fazemos.vue';
+import Resultados from '@/components/Resultados.vue';
+
+
+import CTA from '@/components/CTA.vue';
+import OutrosParceiros from '@/components/OutrosParceiros.vue';
 import IniciativasGrid from '@/components/IniciativasGrid.vue';
-import HeadingAlpha from '@/components/HeadingAlpha.vue';
 
 //images
 import resultados from '@img/resultados.png';
 
+
+const data = await init('home');
 //data
-const data = {
-	hero: {
-		title: 'Pretux',
-        subtitle: 'Somos uma comunidade que oferece apoio, direcionamento, mentoria e qualificação para os profissionais pretos de UX.',
-        button: {
-            url: 'https://google.com',
-            label: 'Seja membro',
-			style: 'primary'
-        },
-		image: '/img/hero-home.png'
-	},
-	features: {
-		title: 'O que fazemos:',
-		items: [
-			{
-				title: 'Bolsa de estudos',
-				description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus esse enim excepturi itaque ab doloribus quisquam sit? Porro molestiae officia quis vitae commodi dolorem a! Sint temporibus error corporis accusamus',
-				image: '/img/girl-1.png'
-			},
-			{
-				title: 'Bolsa de estudos',
-				description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus esse enim excepturi itaque ab doloribus quisquam sit? Porro molestiae officia quis vitae commodi dolorem a! Sint temporibus error corporis accusamus',
-				image: '/img/girl-1.png'
-			},
-			{
-				title: 'Bolsa de estudos',
-				description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus esse enim excepturi itaque ab doloribus quisquam sit? Porro molestiae officia quis vitae commodi dolorem a! Sint temporibus error corporis accusamus',
-				image: '/img/girl-1.png'
-			},
-			{
-				title: 'Bolsa de estudos',
-				description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus esse enim excepturi itaque ab doloribus quisquam sit? Porro molestiae officia quis vitae commodi dolorem a! Sint temporibus error corporis accusamus',
-				image: '/img/girl-1.png'
-			}
-		]
-	},
-	statistics: {},
-	ctaCarousel : {
+const demidata = {
 		bkgImg: '/img/cta-bg.jpg',
 		sideImg: '/img/mae-e-filho.png',
 		title: 'Nossa Missao',
@@ -69,119 +39,29 @@ const data = {
 		}
 
 	}
-}
-// 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
+
 ---
 
 <BaseLayout title="Home">
 
-	<Hero data={data.hero} slot="header"></Hero>
+	<Hero data={data[0]} slot="header"></Hero>
 
-    <ContentBlock extraClasses="bg-white">
-		<HeadingAlpha class="mb-11 text-center">
-			O que fazemos:
-		</HeadingAlpha>
-		<div class="flex gap-10 justify-between">
-			<div class="max-w-[257px] mx-auto">
-				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
-					<p class="font-bold">Bolsa de estudos</p>
-				</div>
-				<p class="text-black-600 text-lg">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
-				</p>
-			</div>
-			<div class="max-w-[257px] mx-auto">
-				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
-					<p class="font-bold">Bolsa de estudos</p>
-				</div>
-				<p class="text-black-600 text-lg">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
-				</p>
-			</div>
-			<div class="max-w-[257px] mx-auto">
-				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
-					<p class="font-bold">Bolsa de estudos</p>
-				</div>
-				<p class="text-black-600 text-lg">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
-				</p>
-			</div>
-			<div class="max-w-[257px] mx-auto">
-				<div class="bg-blend flex items-center justify-center mb-8 rounded-lg w-[257px] h-[257px]">
-					<p class="font-bold">Bolsa de estudos</p>
-				</div>
-				<p class="text-black-600 text-lg">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis convallis luctus.
-				</p>
-			</div>
-		</div>
-
+    <ContentBlock class="bg-white py-14 md:hidden">
+		<Fazemos data={data[1]}></Fazemos>
     </ContentBlock>
 
-
-	<ContentBlock extraClasses="bg-white">
-		<HeadingAlpha class="mb-11 text-center">
-			Resultados
-		</HeadingAlpha>
-		<div class="">
-			<img src={resultados} alt="" class="mb-12"/>
-
-			<div class="flex flex-wrap font-display text-black">
-				<div class="basis-1/4 max-w-[284px] text-center">
-					<p class="font-bold text-8xl">
-						+ de 900
-					</p>
-					<p class="font-bold">
-						bolsas distribuidas
-					</p>
-					em 2 anos
-				</div>
-				<div class="basis-1/4 max-w-[284px] text-center">
-					<p class="font-bold text-8xl">
-						200
-					</p>
-					<p class="font-bold">
-						pessoas pretas
-					</p>
-					mentoradas
-				</div>
-				<div class="basis-1/4 max-w-[284px] text-center">
-					<p class="font-bold text-8xl">
-						+ de 50
-					</p>
-					<p class="font-bold">
-						eventos exclusivos
-					</p>
-					para pessoas pretas
-				</div>
-				<div class="basis-1/4 max-w-[284px] text-center">
-					<p class="font-bold text-8xl">
-						+ de 50
-					</p>
-					<p class="font-bold">
-						rodas de conversas
-					</p>
-					para pessoas pretas
-				</div>
-			</div>
-		</div>
+	<ContentBlock class="bg-white py-14 md:py-8 md:px-6">
+		<Resultados data={data[2]}  client:visible></Resultados>
 	</ContentBlock>
 
-	<CTACarousel client:load data={data.ctaCarousel} ></CTACarousel>
+	<!-- <CTACarousel client:load data={data.ctaCarousel} ></CTACarousel> -->
 
-	<SectionCarousel></SectionCarousel>
-
-	<IniciativasGrid></IniciativasGrid>
+	<ContentBlock class="bg-black-700/20 py-14 md:py-8 md:bg-white md:px-6">
+		<OutrosParceiros client:visible data={data[4]}></OutrosParceiros>
+	</ContentBlock>
+	
+	<ContentBlock class="bg-black-600 py-14 md:py-8 md:px-6">
+		<IniciativasGrid  data={data[5]}></IniciativasGrid>
+	</ContentBlock>
 
 </BaseLayout>
-
-
-
-<style lang="scss">
-
-.bg-blend {
-	background: url('/src/assets/img/girl-1.png'),linear-gradient(to right bottom, black, transparent);
-	background-blend-mode: multiply;
-}
-
-</style>

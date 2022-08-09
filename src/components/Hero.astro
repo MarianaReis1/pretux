@@ -1,19 +1,24 @@
 ---
+import ContentBlock from '@/components/ContentBlock.vue';
+
 const { data } = Astro.props;
 ---
 
 
-<section class="bg-center bg-cover bg-no-repeat max-w-[1440px] mx-auto px-26 py-48" style={'background-image: url(' + data.image + ')'}>
+<section class="bg-top bg-cover bg-no-repeat px-26 py-48 md:px-3 md:pt-26 md:pb-10" style={'background-image: url(' + data.primary.background_image.url + ')'} >
 
-    <div class="max-w-[566px]">
-        <h1 class="font-bold text-display text-9xl mb-2.5">{ data.title }</h1>
-        <p class="font-light leading-tight mb-5 text-3xl" set:html="data.subtitle"></p>
-
-        {data.button && 
-            <a href={data.button.url} class="btn--primary">
-                { data.button.label }
-            </a>
-        }
-    </div>
+    <ContentBlock>
+        <div class="max-w-[566px] md:text-center md:mx-auto">
+            <h1 class="alpha mb-5">
+                { data.primary.title }
+            </h1>
+            <p class="font-light leading-tight mb-20 text-md md:mb-5" set:html={data.primary.description[0].text}></p>
+            {data.primary.button_link &&
+                <a href={data.primary.button_link.slug} class={`btn--${data.primary.button_style}`}>
+                    { data.primary.button_label }
+                </a>
+            }
+        </div>
+    </ContentBlock>
 
 </section>
