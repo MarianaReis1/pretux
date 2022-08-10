@@ -7,38 +7,14 @@ import Hero from '@/components/Hero.astro';
 import ContentBlock from '@/components/ContentBlock.vue';
 import Fazemos from '@/components/Fazemos.vue';
 import Resultados from '@/components/Resultados.vue';
-
-
 import CTA from '@/components/CTA.vue';
 import OutrosParceiros from '@/components/OutrosParceiros.vue';
+
 import IniciativasGrid from '@/components/IniciativasGrid.vue';
 
-//images
-import resultados from '@img/resultados.png';
-
-
 const data = await init('home');
-//data
-const demidata = {
-		bkgImg: '/img/cta-bg.jpg',
-		sideImg: '/img/mae-e-filho.png',
-		title: 'Nossa Missao',
-		description: 'Trabalhamos para aumentar a inserção de pessoas pretas no mercado de trabalho, diversificar a tecnologia brasileira e difundir conhecimeto de UX. <br/><br/>vamos juntos trabalhar por mais representatividade.',
-		button: {
-            url: 'google.com',
-            label: 'Seja membro',
-			style: 'primary'
-        },
-		carousel: {
-			title: 'Empresas que já estão conosco:',
-			items: [
-				'/img/logo-pretux.png',
-				'/img/logo-pretux.png',
-				'/img/logo-pretux.png'
-			]
-		}
 
-	}
+const ctaBgImg = `background-image: url('${data[3].primary.background_image.url}')`
 
 ---
 
@@ -53,8 +29,10 @@ const demidata = {
 	<ContentBlock class="bg-white py-14 md:py-8 md:px-6">
 		<Resultados data={data[2]}  client:visible></Resultados>
 	</ContentBlock>
-
-	<!-- <CTACarousel client:load data={data.ctaCarousel} ></CTACarousel> -->
+	
+	<ContentBlock class="bg-black-600 bg-no-repeat bg-cover py-28 px-26 3xl:p-14 md:p-6" style={ctaBgImg}>
+		<CTA data={data[3]} client:load ></CTA>
+	</ContentBlock>
 
 	<ContentBlock class="bg-black-700/20 py-14 md:py-8 md:bg-white md:px-6">
 		<OutrosParceiros client:visible data={data[4]}></OutrosParceiros>

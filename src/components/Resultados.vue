@@ -34,7 +34,7 @@
 </template>
 
 <script setup>
-import * as prismicH from '@prismicio/helpers'
+import * as prismicH from '@prismicio/helpers';
 import 'vue3-carousel/dist/carousel.css';
 import { Slide } from 'vue3-carousel';
 import CarouselBase from '@/components/CarouselBase.vue';

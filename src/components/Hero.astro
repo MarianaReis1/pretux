@@ -14,7 +14,9 @@ const { data } = Astro.props;
             </h1>
             <p class="font-light leading-tight mb-20 text-md md:mb-5" set:html={data.primary.description[0].text}></p>
             {data.primary.button_link &&
-                <a href={data.primary.button_link.slug} class={`btn--${data.primary.button_style}`}>
+                <a 
+                href={data.primary.button_link.slug} 
+                class:list={['btn', data.primary.button_style ]}>
                     { data.primary.button_label }
                 </a>
             }

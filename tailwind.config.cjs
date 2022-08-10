@@ -53,6 +53,10 @@ module.exports = {
 				13: '50px', // 90px
 				22: '5.625rem', // 90px
 				26: '100px',
+			},
+
+			gridTemplateColumns: {
+				'autofit' : 'repeat(auto-fill, minmax(200px, 1fr))'
 			}
 
 		},

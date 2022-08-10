@@ -28,7 +28,7 @@ const props = defineProps({ data: { type: Object } })
 const settings = {
     itemsToShow: 2,
     wrapAround: true,
-    snapAlign: "start",
+    snapAlign: "center",
 }
 
 const breakpoints = {
@@ -38,3 +38,53 @@ const breakpoints = {
 }
 
 </script>
+
+<style lang="scss">
+
+[data-carousel="parceiros"] {
+
+    .carousel__viewport {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .carousel__prev,
+    .carousel__next {
+        @apply bg-transparent w-14 h-14 md:w-8 md:h-8;
+
+        & svg {
+            @apply w-14 h-14 md:w-8 md:h-8;
+        }
+
+        @screen md {
+            @apply hidden;
+        }
+    }
+
+    .carousel__pagination {
+        @apply hidden;
+
+        @screen md {
+            @apply flex;
+        }
+    }
+
+    .carousel__viewport {
+        @screen md {
+            @apply mb-6
+        }
+    }
+
+
+    .carousel__pagination-button {
+        @apply bg-black/50 w-2.5 h-2.5 rounded-full;
+    }
+
+    .carousel__pagination-button--active {
+        @apply bg-white;
+    }
+
+
+}
+
+</style>
