@@ -1,0 +1,21 @@
+---
+import { init } from '@/modules/prismic.js';
+import ContentFallback from '@/modules/fallback-content.js';
+
+import NavigationItems from '@/components/nav/NavigationItems.vue';
+
+//images
+import logo from '@img/logo-pretux.svg';
+
+const currentPath = new URL(Astro.request.url).pathname.slice(1);
+
+const prismicData = await init('nav');
+const items = prismicData.items
+---
+
+<nav class="relative bg-black-600 py-4 px-3 font-heading shadow-xl lg:p-6">
+    <section class="flex justify-between items-center max-w-[1256px] mx-auto">
+        <img src={logo} alt="" class=""/>
+        <NavigationItems client:load items={items} currentPage={currentPath}></NavigationItems>
+    </section>
+</nav>

@@ -1,6 +1,6 @@
 <template>
 
-    <section class="">
+    <ContentBlock class="bg-white py-14 md:hidden">
         <h1 class="alpha mb-11 text-center text-black-600">
             {{ data.primary.title }}
         </h1>
@@ -15,18 +15,16 @@
                 </p>
             </div>
         </div>
-    </section>
+    </ContentBlock>
 
 </template>
 
 <script setup>
 
-import { computed } from '@vue/runtime-core';
+    import ContentBlock from '@/components/ContentBlock.vue';
 
-const bg = (image) => `background-image: url('${image}');`;
+    const bg = (image) => `background-image: url('${image}');`;
 
-const props = defineProps({
-    data: { Object }
-})
+    const props = defineProps({ data: { Object } });
 
 </script>

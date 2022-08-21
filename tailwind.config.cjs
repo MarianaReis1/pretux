@@ -25,6 +25,7 @@ module.exports = {
 			'7xl': '2rem', // 32px
 			'8xl': '2.25rem', // 38px
 			'9xl': '2.5rem', // 40px
+			'10xl': '3rem', // 48px
 		},
 
 		fontFamily: {

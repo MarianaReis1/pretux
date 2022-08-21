@@ -1,41 +1,48 @@
 <template>
+    <ContentBlock class="bg-black-700/20 py-14 md:py-8 md:bg-white md:px-6">
 
-    <div class="max-w-[1244px] mx-auto px-3 md:bg-black-600 md:rounded-2xl md:py-4 md:px-10">
         <h1 class="alpha mb-4 md:text-center md:mb-8">
             {{ data.primary.title}}
         </h1>
         <p class="mb-10 md:hidden" v-html="data.primary.description"></p>
 
-        <CarouselBase data-carousel="parceiros" :pagination="true" :settings="settings" :breakpoints="breakpoints">
-            <CarouselItemParceiros :image="data.items[0].img.url"></CarouselItemParceiros>
-            <CarouselItemParceiros :image="data.items[1].img.url"></CarouselItemParceiros>
-            <CarouselItemParceiros :image="data.items[2].img.url"></CarouselItemParceiros>
-            <CarouselItemParceiros :image="data.items[3].img.url"></CarouselItemParceiros>
-            <CarouselItemParceiros :image="data.items[3].img.url"></CarouselItemParceiros>
-            <CarouselItemParceiros :image="data.items[3].img.url"></CarouselItemParceiros>
-        </CarouselBase>
-    </div>
+        <div class="relative">
+            <Carousel data-carousel="parceiros" :settings="settings" :breakpoints="breakpoints">
 
+                <Slide v-for="slide in data.items" :key="slide.img.url">
+                    <div class="bg-black-700/20 grid place-items-center p-2 rounded-2xl w-full max-w-[193px] mx-2">
+                        <img :src="slide.img.url" alt="" class="w-full h-full object-contain" />
+                    </div>
+                </Slide>
+
+                <template #addons>
+                    <navigation />
+                    <pagination />
+                </template>
+            </Carousel>
+        </div>
+
+    </ContentBlock>
 </template>
 
 <script setup>
 
-import CarouselBase from '@/components/CarouselBase.vue';
-import CarouselItemParceiros from '@/components/CarouselItemParceiros.vue';
+    import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
+    import ContentBlock from '@/components/ContentBlock.vue';
 
-const props = defineProps({ data: { type: Object } })
+    const props = defineProps({ data: { type: Object } });
 
-const settings = {
-    itemsToShow: 2,
-    wrapAround: true,
-    snapAlign: "center",
-}
+    const settings = {
+        itemsToShow: 2,
+        wrapAround: true,
+        snapAlign: "start",
+    };
 
-const breakpoints = {
-    767: {
-        itemsToShow: 4,
-    }
-}
+    const breakpoints = {
+        767: {
+            itemsToShow: 4,
+        }
+    };
 
 </script>
 
@@ -43,10 +50,7 @@ const breakpoints = {
 
 [data-carousel="parceiros"] {
 
-    .carousel__viewport {
-        max-width: 900px;
-        margin: auto;
-    }
+    @apply max-w-[1000px] mx-auto px-3 static;
 
     .carousel__prev,
     .carousel__next {
@@ -59,6 +63,14 @@ const breakpoints = {
         @screen md {
             @apply hidden;
         }
+    }
+
+    .carousel__prev {
+        @apply left-2.5;
+    }
+
+    .carousel__next {
+        @apply right-2.5;
     }
 
     .carousel__pagination {
@@ -83,7 +95,6 @@ const breakpoints = {
     .carousel__pagination-button--active {
         @apply bg-white;
     }
-
 
 }
 

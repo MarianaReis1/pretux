@@ -1,0 +1,58 @@
+<script setup>
+
+    import { ref } from 'vue';
+
+    const props = defineProps({ 
+        items: { type: Array, },
+        currentPage: { type: String }
+    })
+
+    const shouldShowMobileNav = ref(false);
+
+    const toggleMobileNav = () => shouldShowMobileNav.value =! shouldShowMobileNav.value;
+
+</script>
+
+<template>
+
+    <ul class="flex items-center justify-center gap-12 font-semibold md:hidden md:absolute md:z-40 md:flex-col md:items-start md:justify-start md:gap-5 md:p-6 md:top-full md:left-0 md:bg-black-600 md:w-screen md:h-screen md:overflow-y-auto">
+
+        <li v-for="item in items" :key="item.label">
+            <a  :href="item.link.slug" 
+                :class="[
+                    'relative leading-10 tracking-wider before:absolute before:-bottom-[10px] before:-left-[7%] before:h-[3px] before:bg-brown-400 before:rounded-full before:w-[114%]',
+                    item.link.slug == currentPage ? 'before:block' : 'before:hidden',
+                ]"
+            >
+                {{ item.label }}
+            </a>
+        </li>
+        <li>
+            <a href="#contatos">Contatos</a>
+        </li>
+
+    </ul>
+
+    <ul v-if="shouldShowMobileNav" :class="['items-center justify-center gap-12 font-semibold hidden md:flex md:absolute md:z-40 md:flex-col md:items-start md:justify-start md:gap-5 md:p-6 md:top-full md:left-0 md:bg-black-600 md:w-screen md:h-screen md:overflow-y-auto']">
+
+        <li v-for="item in items" :key="item.label">
+            <a  :href="item.link.slug" 
+                :class="[
+                    'relative leading-10 tracking-wider before:absolute before:-bottom-[10px] before:-left-[7%] before:h-[3px] before:bg-brown-400 before:rounded-full before:w-[114%]',
+                    item.link.slug == currentPage ? 'before:block' : 'before:hidden',
+                ]"
+            >
+                {{ item.label }}
+            </a>
+        </li>
+        <li>
+            <a @click="shouldShowMobileNav = false" href="#contatos">Contatos</a>
+        </li>
+
+    </ul>
+
+    <button @click="toggleMobileNav" class="border border-white font-display hidden rounded py-1.5 px-4 md:block">
+        menu
+    </button>
+
+</template>

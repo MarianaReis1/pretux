@@ -1,0 +1,33 @@
+---
+
+import { init, getSlice } from '@/modules/prismic.js'
+import fallback from '@/modules/fallback-content.js'
+
+//components
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/Hero.astro';
+import Fazemos from '@/components/Fazemos.vue';
+import Resultados from '@/components/Resultados.vue';
+import CTA from '@/components/CTA.vue';
+import OutrosParceiros from '@/components/OutrosParceiros.vue';
+import IniciativasGrid from '@/components/IniciativasGrid.vue';
+
+const data = await init('home') || fallback.home;
+
+---
+
+<BaseLayout title="Home">
+
+	<Hero data={getSlice('hero',data.body)} ></Hero>
+
+	<Fazemos data={getSlice('o_que_fazemos',data.body)}></Fazemos>
+
+	<Resultados client:load data={getSlice('resultados',data.body)}></Resultados>
+
+	<CTA client:load data={getSlice('missao',data.body)}></CTA>
+
+	<OutrosParceiros client:load data={getSlice('carousel_outros_parceiros',data.body)}></OutrosParceiros>
+
+	<IniciativasGrid data={getSlice('iniciativas_rolando',data.body)}></IniciativasGrid>
+
+</BaseLayout>

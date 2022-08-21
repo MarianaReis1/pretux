@@ -5,7 +5,7 @@ import logo from '@img/logo-pretux.svg';
 
 <template>
 
-<footer class="bg-black-800 py-14">
+<footer id="contatos" class="bg-black-800 py-14">
     <div class="max-w-[1256px] mx-auto px-3 flex justify-between items-start">
         <img :src="logo" alt="" class="w-[245px]"/>
 
