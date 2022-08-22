@@ -1,7 +1,7 @@
 <template>
     <ContentBlock class="bg-black-700/20 py-14 md:py-8 md:bg-white md:px-6">
 
-        <h1 class="alpha mb-4 md:text-center md:mb-8">
+        <h1 class="alpha mb-4 md:text-center md:mb-8 md:text-black-800">
             {{ data.primary.title}}
         </h1>
         <p class="mb-10 md:hidden" v-html="data.primary.description"></p>

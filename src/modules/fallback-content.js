@@ -471,7 +471,198 @@ const fallback = {
       "slice_type": "iniciativas_rolando",
       "slice_label": null
     }
-  ]
+  ],
+  quero_ajudar: {
+    form_title: 'Como Ajudar?',
+    form_description: [
+      {
+        type: 'paragraph',
+        text: 'O PretUX é um espaço aberto para pessoas interessadas em ajudar das mais diversas formas. Quer compartilhar conhecimento, mentorar ou ajudar designers pretes? Clique no botão ajudar!',
+        spans: []
+      },
+      {
+        type: 'paragraph',
+        text: 'Além das formas já citadas é possível nos ajudar com:',
+        spans: []
+      }
+    ],
+    form_img: {
+      dimensions: { width: 571, height: 677 },
+      alt: null,
+      copyright: null,
+      url: 'https://images.prismic.io/pretux/c5ebc460-3bf6-4ed2-ad32-0639d3af032a_menina-no-computador.png?auto=compress,format'
+    }
+  },
+  nav: {
+    items: [
+      { label: 'Home', link: { link_type: 'Any' } },
+      {
+        label: 'Sobre',
+        link: {
+          id: 'YwEEEBYAACYAJuyH',
+          type: 'page',
+          tags: [],
+          lang: 'en-gb',
+          slug: 'sobre',
+          first_publication_date: '2022-08-20T15:56:03+0000',
+          last_publication_date: '2022-08-20T15:56:03+0000',
+          uid: 'sobre',
+          url: '/sobre',
+          link_type: 'Document',
+          isBroken: false
+        }
+      },
+      {
+        label: 'Quero Ajudar',
+        link: {
+          id: 'YwEDfhYAACkAJuny',
+          type: 'page',
+          tags: [],
+          lang: 'en-gb',
+          slug: 'como-ajudar',
+          first_publication_date: '2022-08-20T15:53:38+0000',
+          last_publication_date: '2022-08-21T20:48:41+0000',
+          uid: 'quero-ajudar',
+          url: '/sobre',
+          link_type: 'Document',
+          isBroken: false
+        }
+      },
+      {
+        label: 'Serviços',
+        link: {
+          id: 'YwED5xYAACgAJuvR',
+          type: 'page',
+          tags: [],
+          lang: 'en-gb',
+          slug: 'servicos',
+          first_publication_date: '2022-08-20T15:55:22+0000',
+          last_publication_date: '2022-08-20T15:55:22+0000',
+          uid: 'servicos',
+          url: '/sobre',
+          link_type: 'Document',
+          isBroken: false
+        }
+      }
+    ]
+  },
+  footer: {
+    site_map_title: 'No Site',
+    site_map_items: [
+      {
+        label: 'Página Inicial',
+        link: {
+          id: 'Yu7g1RAAACIAn_j4',
+          type: 'home',
+          tags: [],
+          lang: 'en-gb',
+          slug: 'home',
+          first_publication_date: '2022-08-06T23:44:08+0000',
+          last_publication_date: '2022-08-21T15:47:27+0000',
+          uid: 'home',
+          url: '/',
+          link_type: 'Document',
+          isBroken: false
+        }
+      },
+      {
+        label: 'Sobre',
+        link: {
+          id: 'YwEEEBYAACYAJuyH',
+          type: 'page',
+          tags: [],
+          lang: 'en-gb',
+          slug: 'sobre',
+          first_publication_date: '2022-08-20T15:56:03+0000',
+          last_publication_date: '2022-08-20T15:56:03+0000',
+          uid: 'sobre',
+          url: '/sobre',
+          link_type: 'Document',
+          isBroken: false
+        }
+      },
+      {
+        label: 'Quero Ajudar',
+        link: {
+          id: 'YwPV3RYAACkAM3d9',
+          type: 'page',
+          tags: [],
+          lang: 'en-gb',
+          slug: 'quero-ajudar',
+          first_publication_date: '2022-08-22T19:16:02+0000',
+          last_publication_date: '2022-08-22T19:39:04+0000',
+          uid: 'quero-ajudar',
+          url: '/sobre',
+          link_type: 'Document',
+          isBroken: false
+        }
+      },
+      {
+        label: 'Serviços',
+        link: {
+          id: 'YwED5xYAACgAJuvR',
+          type: 'page',
+          tags: [],
+          lang: 'en-gb',
+          slug: 'servicos',
+          first_publication_date: '2022-08-20T15:55:22+0000',
+          last_publication_date: '2022-08-20T15:55:22+0000',
+          uid: 'servicos',
+          url: '/sobre',
+          link_type: 'Document',
+          isBroken: false
+        }
+      }
+    ],
+    logo: {
+      dimensions: { width: 153, height: 62 },
+      alt: null,
+      copyright: null,
+      url: 'https://pretux.cdn.prismic.io/pretux/660bcd3a-61d7-4bcf-89a2-52d545e5ae47_logo-pretux.svg'
+    },
+    social_media_title: 'Nas Redes',
+    social_media_items: [
+      {
+        icon: {
+          dimensions: [Object],
+          alt: null,
+          copyright: null,
+          url: 'https://images.prismic.io/pretux/8bf59f94-6045-4a36-9082-7d6cc3ee61de_icon-medium.png?auto=compress,format'
+        },
+        link: { link_type: 'Any' }
+      },
+      {
+        icon: {
+          dimensions: [Object],
+          alt: null,
+          copyright: null,
+          url: 'https://images.prismic.io/pretux/5cd937c7-5450-4e0b-8b1d-9ea595ec9ea8_icon-linkedin.png?auto=compress,format'
+        },
+        link: { link_type: 'Any' }
+      },
+      {
+        icon: {
+          dimensions: [Object],
+          alt: null,
+          copyright: null,
+          url: 'https://images.prismic.io/pretux/5b0e004a-6541-4d26-981d-ba1366a96115_icon-instagram.png?auto=compress,format'
+        },
+        link: { link_type: 'Any' }
+      },
+      {
+        icon: {
+          dimensions: [Object],
+          alt: null,
+          copyright: null,
+          url: 'https://images.prismic.io/pretux/b1a12085-b59c-4a4b-befc-5b0ec3eb34b5_icon-facebook.png?auto=compress,format'
+        },
+        link: { link_type: 'Any' }
+      }
+    ],
+    contact_title: 'Contato',
+    contact_label: 'somos@pretux.com.br',
+    contact_email: 'mailto:somos@pretux.com.br'
+  }
 }
 
 export default fallback

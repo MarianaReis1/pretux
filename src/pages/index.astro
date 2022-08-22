@@ -1,7 +1,7 @@
 ---
 
-import { init, getSlice } from '@/modules/prismic.js'
-import fallback from '@/modules/fallback-content.js'
+import { getSingleSlice, getSlice } from '@/modules/prismic.js';
+import fallback from '@/modules/fallback-content.js';
 
 //components
 import BaseLayout from '@/layouts/BaseLayout.astro';
@@ -12,7 +12,7 @@ import CTA from '@/components/CTA.vue';
 import OutrosParceiros from '@/components/OutrosParceiros.vue';
 import IniciativasGrid from '@/components/IniciativasGrid.vue';
 
-const data = await init('home') || fallback.home;
+const data = await getSingleSlice('home') || fallback.home;
 
 ---
 

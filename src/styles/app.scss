@@ -6,3 +6,9 @@
 html {
     scroll-behavior: smooth;
 }
+
+.editorial {
+    p {
+        @apply mb-2;
+    }
+}

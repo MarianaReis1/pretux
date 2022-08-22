@@ -1,17 +1,17 @@
 .btn{
     &.primary {
-        @apply inline-block bg-brown-400 font-semibold font-display min-w-[200px] py-4 px-10 rounded-lg text-black-400 text-center w-fit md:max-w-full md:w-full;
+        @apply inline-block bg-brown-400 font-semibold font-display min-w-[200px] py-4 px-10 rounded-lg text-black-400 text-center w-fit md:max-w-full md:w-full md:text-base;
     }
 
     &.secondary {
-        @apply inline-block bg-black-600 font-semibold font-display min-w-[200px] py-4 px-10 rounded-lg w-fit text-center;
+        @apply inline-block bg-black-600 font-semibold font-display min-w-[200px] py-4 px-10 rounded-lg w-fit text-white text-center md:text-base;
     }
 
     &.tertiary {
-        @apply inline-block bg-transparent border-2 border-white min-w-[200px] py-4 px-10 rounded-lg text-black-400 text-center;
+        @apply inline-block bg-transparent border-2 border-white min-w-[200px] py-4 px-10 rounded-lg text-black-400 text-center md:text-base;
     }
 
     // &.quaternary {
-    //     @apply inline-block bg-transparent border-2 border-white min-w-[200px] py-4 px-3 rounded-lg text-center;
+    //     @apply inline-block bg-transparent border-2 border-white min-w-[200px] py-4 px-3 rounded-lg text-center md:text-base;
     // }
 }

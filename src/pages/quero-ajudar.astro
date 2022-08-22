@@ -1,73 +1,105 @@
 ---
+import { getPage } from '@/modules/prismic.js';
+import * as prismicH from '@prismicio/helpers';
+import fallback from '@/modules/fallback-content.js';
+
 //components
 import BaseLayout from '@/layouts/BaseLayout.astro';
-
-//images
-import meninaComputador from '@img/menina-no-computador.png';
+import ContentBlock from '@/components/ContentBlock.vue';
 
 
-//data
-const data = {
-	form: {
-		title: "Como ajudar?",
-        description: "O PretUX é um espaço aberto para pessoas interessadas em ajudar das mais diversas formas. Quer compartilhar conhecimento, mentorar ou ajudar designers pretes? Clique no botão ajudar!<span class='block mt-3'>Além das formas já citadas é possível nos ajudar com:</span>",
-	}
-}
+const data = await getPage('quero-ajudar')  || fallback.quero_ajudar;
 
 ---
 
 <BaseLayout title="Quero Ajudar">
 
-<!-- two col wrapper -->
-	<section class="bg-white flex items-start justify-between gap-10 py-28 px-26">
-		<img src={meninaComputador} alt="" class="flex-shrink-0 w-1/2 rounded-xl" />
+	<ContentBlock class="bg-white min-h-screen">
+		<div class="flex items-start justify-between gap-22 py-28 lg:gap-6 lg:flex-col lg:py-4 lg:px-1">
 
-		<div class="w-1/2">
-			<div class="mb-5 text-3xl">
-				<h1 class="beta">
-					{data.form.title}
-				</h1>
-				<p class="text-black" set:html={data.form.description}></p>
+			<div class="w-1/2 h-full lg:w-full">
+				<img src={data.form_img.url} alt="" class="h-[677px] max-w-[571px] object-cover object-left-top w-full rounded-xl lg:mx-auto lg:h-auto lg:aspect-video" />
 			</div>
 
-			<form class="flex flex-col gap-4 text-black-600">
-				<fieldset class="border-black-600 border-2 mb-2.5 px-4 py-1 rounded-xl">
-					<legend class="font-bold px-1">Nome</legend>
-					<input class="pb-3 px-3 w-full opacity-100 focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado" />
-				</fieldset>
-				<div class="flex gap-4">
-					<fieldset class="border-black-600 border-2 mb-2.5 px-4 py-1 rounded-xl">
-						<legend class="font-bold px-1">Email</legend>
-						<input class="pb-3 px-3 w-full opacity-100 focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" />
-					</fieldset>
-					<fieldset class="border-black-600 border-2 mb-2.5 px-4 py-1 rounded-xl">
-						<legend class="font-bold px-1">Telefone</legend>
-						<input class="pb-3 px-3 w-full opacity-100 focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
-					</fieldset>
+			<div class="flex-shrink-0 w-1/2 lg:w-full">
+				<div class="mb-20 lg:mb-10">
+					<h1 class="beta">
+						{data.form_title}
+					</h1>
+					<div class="editorial text-black" set:html={prismicH.asHTML(data.form_description)}></div>
 				</div>
-				
-				<!-- add multiselect field -->
-				
-				<fieldset class="border-black-600 border-2 mb-2.5 px-4 py-1 rounded-xl">
-					<legend class="font-bold px-1">Mensagem</legend>
-					<textarea class="pb-3 px-3 w-full opacity-100 focus-visible:outline-none" rows="5" name="telefone" placeholder="Informe como você pode ajudar" />
-				</fieldset>
 
-				<button class="btn--secondary text-white ">Ajudar</button>
+				<form class="flex flex-col gap-6 text-black-600 text-base" >
 
-			</form>
+					<fieldset class="border-black-600 border-2 px-4 rounded-xl">
+						<legend class="font-bold px-1">Nome</legend>
+						<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado" />
+					</fieldset>
+
+					<div class="flex gap-4 xs:flex-col">
+						<fieldset class="border-black-600 border-2 px-4 rounded-xl w-full">
+							<legend class="font-bold px-1">Email</legend>
+							<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" />
+						</fieldset>
+						<fieldset class="border-black-600 border-2 px-4 rounded-xl w-full">
+							<legend class="font-bold px-1">Telefone</legend>
+							<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
+						</fieldset>
+					</div>
+
+					<div class="grid grid-cols-2 gap-2 md:grid-cols-1">
+						<label class="checkbox block font-semibold relative pl-7 mb-2.5 cursor-pointer text-xs">
+							<input checked="checked" class="absolute opacity-0 w-0 h-0" type="checkbox" name="como-ajudar" value="Se inscrevendo no nosso programa de mentoria">
+							<span class="absolute top-[3px] left-0 w-5 h-5 checkmark"></span>
+							Se inscrevendo no nosso programa de mentoria.
+						</label>
+						<label class="checkbox block font-semibold relative pl-7 mb-2.5 cursor-pointer text-xs">
+							<input checked="checked" class="absolute opacity-0 w-0 h-0" type="checkbox" name="como-ajudar" value="Viabilizando bolsas ou descontos em cursos de UX Design">
+							<span class="absolute top-[3px] left-0 w-5 h-5 checkmark"></span>
+							Viabilizando bolsas ou descontos em cursos de UX Design
+						</label>
+						<label class="checkbox block font-semibold relative pl-7 mb-2.5 cursor-pointer text-xs">
+							<input  class="absolute opacity-0 w-0 h-0" type="checkbox" name="como-ajudar" value="Doando ingressos para eventos da área">
+							<span class="absolute top-[3px] left-0 w-5 h-5 checkmark"></span>
+							Doando ingressos para eventos da área.
+						</label>
+						<label class="checkbox block font-semibold relative pl-7 mb-2.5 cursor-pointer text-xs">
+							<input  class="absolute opacity-0 w-0 h-0" type="checkbox" name="como-ajudar" value="Ministrando um curso ou palestra">
+							<span class="absolute top-[3px] left-0 w-5 h-5 checkmark"></span>
+							Ministrando um curso ou palestra.
+						</label>
+						<label class="checkbox block font-semibold relative pl-7 mb-2.5 cursor-pointer text-xs">
+							<input  class="absolute opacity-0 w-0 h-0" type="checkbox" name="como-ajudar" value="Outra forma">
+							<span class="absolute top-[3px] left-0 w-5 h-5 checkmark"></span>
+							Outra forma.
+						</label>
+					</div>
+
+					<fieldset class="border-black-600 border-2 px-4 rounded-xl">
+						<legend class="font-bold px-1">Mensagem</legend>
+						<textarea v-model="formData['message']" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
+					</fieldset>
+					<button class="btn secondary">Ajudar</button>
+				</form>
+
+			</div>
+
 		</div>
-	</section>
+	</ContentBlock>
 
 </BaseLayout>
 
 
+<style>
 
-<style lang="scss">
+    .checkmark:after {
+        content: url('/src/assets/img/icon-unchecked.png');
+        position: absolute;
+        display: block;
+    }
 
-.bg-blend {
-	background: url('/src/assets/img/girl-1.png'),linear-gradient(to right bottom, black, transparent);
-	background-blend-mode: multiply;
-}
+    .checkbox input:checked ~ .checkmark:after {
+        content: url('/src/assets/img/icon-checked.png');
+    }
 
 </style>

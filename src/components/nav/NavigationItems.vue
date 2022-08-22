@@ -1,6 +1,6 @@
 <script setup>
 
-    import { ref } from 'vue';
+    import { computed, ref } from 'vue';
 
     const props = defineProps({ 
         items: { type: Array, },
@@ -11,6 +11,8 @@
 
     const toggleMobileNav = () => shouldShowMobileNav.value =! shouldShowMobileNav.value;
 
+    const linkResolver = (link) => link.type == "home" ? '/' : '/' + link.slug;
+
 </script>
 
 <template>
@@ -18,10 +20,10 @@
     <ul class="flex items-center justify-center gap-12 font-semibold md:hidden md:absolute md:z-40 md:flex-col md:items-start md:justify-start md:gap-5 md:p-6 md:top-full md:left-0 md:bg-black-600 md:w-screen md:h-screen md:overflow-y-auto">
 
         <li v-for="item in items" :key="item.label">
-            <a  :href="item.link.slug" 
+            <a  :href="linkResolver(item.link)" 
                 :class="[
                     'relative leading-10 tracking-wider before:absolute before:-bottom-[10px] before:-left-[7%] before:h-[3px] before:bg-brown-400 before:rounded-full before:w-[114%]',
-                    item.link.slug == currentPage ? 'before:block' : 'before:hidden',
+                    linkResolver(item.link) == currentPage ? 'before:block' : 'before:hidden',
                 ]"
             >
                 {{ item.label }}
@@ -36,10 +38,10 @@
     <ul v-if="shouldShowMobileNav" :class="['items-center justify-center gap-12 font-semibold hidden md:flex md:absolute md:z-40 md:flex-col md:items-start md:justify-start md:gap-5 md:p-6 md:top-full md:left-0 md:bg-black-600 md:w-screen md:h-screen md:overflow-y-auto']">
 
         <li v-for="item in items" :key="item.label">
-            <a  :href="item.link.slug" 
+            <a  :href="item.link.uid ? item.link.uid : '/'" 
                 :class="[
                     'relative leading-10 tracking-wider before:absolute before:-bottom-[10px] before:-left-[7%] before:h-[3px] before:bg-brown-400 before:rounded-full before:w-[114%]',
-                    item.link.slug == currentPage ? 'before:block' : 'before:hidden',
+                    item.link.uid == currentPage ? 'before:block' : 'before:hidden',
                 ]"
             >
                 {{ item.label }}

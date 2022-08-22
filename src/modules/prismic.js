@@ -13,8 +13,13 @@ const routes = [
 
 const client = prismic.createClient(endpoint, { routes, accessToken });
 
-export const init = async (id) => {
-  const response = await client.getSingle(id,id)
+export const getSingleSlice = async (id) => {
+  const response = await client.getSingle(id)
+  return response.data
+};
+
+export const getPage = async (uid) => {
+  const response = await client.getByUID('page',uid)
   return response.data
 };
 

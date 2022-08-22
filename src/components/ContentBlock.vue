@@ -1,7 +1,7 @@
 <template>
     <section class="">
 
-        <div class="max-w-[1256px] mx-auto px-3">
+        <div class="max-w-[1280px] mx-auto px-6">
             <slot></slot>
         </div>
 
