@@ -45,7 +45,7 @@
     import * as prismicH from '@prismicio/helpers';
     import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
     import ContentBlock from '@/components/ContentBlock.vue';
-    import { computed } from '@vue/runtime-core';
+    import { computed } from 'vue';
 
     const props = defineProps({ data: { type: Object } })
 

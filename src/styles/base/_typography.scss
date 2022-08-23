@@ -1,7 +1,7 @@
 .alpha {
-    @apply font-bold text-4xl md:text-lg;
+    @apply font-bold text-4xl xs:text-md;
 }
 
 .beta {
-    @apply font-bold mb-4 text-black text-4xl;
+    @apply font-bold mb-4 text-black text-4xl xs:text-md;
 }

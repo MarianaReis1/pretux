@@ -50,6 +50,10 @@ module.exports = {
 				}
 			},
 
+			dropShadow: {
+				'3xl': '0 4px 4px rgba(0, 0, 0, 0.25)',
+			},
+
 			spacing: {
 				13: '50px', // 90px
 				22: '5.625rem', // 90px
