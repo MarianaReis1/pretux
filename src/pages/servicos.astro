@@ -1,13 +1,12 @@
 ---
+import { getPage, getSlice } from '@/modules/prismic.js';
+
 //components
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
 
-//images
-import meninaComputador from '@img/menina-no-computador.png';
-
 //data
-const data = {
+const demi = {
 	hero: {
 		title: "Serviços",
         subtitle: 'Nossa comunidade possui profissionais cobiçados de empresas como <span class="font-bold">Nubank, AMBEV Tech, Itaú, Grupo Fleury e iFood</span>. Além da diversidade em gêneros, orientação sexual e background, encontramos também a diversidade geográfica e de tempo de carreira.',
@@ -15,10 +14,12 @@ const data = {
 	}
 }
 
+
+const data = await getPage('servicos');
 ---
 
 <BaseLayout title="Sobre">
 
-	<!-- <Hero data={data.hero} slot="header"></Hero> -->
+	<Hero data={getSlice('hero',data.body)}></Hero>
 
 </BaseLayout>
