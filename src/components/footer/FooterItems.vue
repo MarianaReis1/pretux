@@ -2,7 +2,7 @@
 
     import logo from '@img/logo-pretux.svg';
 
-    const props = defineProps({ data: { type: Object }})
+    const props = defineProps({ data: { type: Object }});
 
     const linkResolver = (link) => link.type == "home" ? '/' : '/' + link.slug;
 
@@ -26,7 +26,7 @@
             </div>
 
             <h1 class="font-bold mb-2">{{ data.social_media_title }}</h1>
-            <ul class="flex flex-wrap justify-between gap-5">
+            <ul class="flex flex-wrap justify-start gap-5">
                 <li v-for="item in data.social_media_items" :key="item.link">
                     <a :href="item.link.url" class="">
                         <img :src="item.icon.url" alt="">
