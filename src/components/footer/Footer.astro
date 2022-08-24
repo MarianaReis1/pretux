@@ -7,34 +7,32 @@ const data = await getSingleSlice('footer');
 
 
 <footer id="contatos" class="absolute top-full bg-black-800 py-14 w-full">
-    <div class="max-w-[1280px] mx-auto px-6 flex justify-between items-start md:flex-col md:gap-10">
+    <div class="max-w-[1280px] mx-auto px-6 ">
+        <h1 class="alpha mb-4">Fale com a gente</h1>
 
-        <form class="flex flex-col gap-5 text-white text-base flex-shrink-1 w-1/2 md:w-full" >
-            <h1 class="alpha">Fale com a gente</h1>
-
-            <fieldset class="border-white border-2 px-4 rounded-xl">
-                <legend class="font-bold px-1">Nome</legend>
-                <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado" />
-            </fieldset>
-
-            <div class="flex gap-4 xs:flex-col">
-                <fieldset class="border-white border-2 px-4 rounded-xl w-full">
-                    <legend class="font-bold px-1">Email</legend>
-                    <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" />
+        <div class="flex justify-between items-start md:flex-col md:gap-10">
+            <form class="flex flex-col gap-5 text-white text-base flex-shrink-1 w-1/2 md:w-full" >
+                <fieldset class="border-white border px-4 rounded-xl">
+                    <legend class="font-bold px-1">Nome</legend>
+                    <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado" />
                 </fieldset>
-                <fieldset class="border-white border-2 px-4 rounded-xl w-full">
-                    <legend class="font-bold px-1">Telefone</legend>
-                    <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
+                <div class="flex gap-4 xs:flex-col">
+                    <fieldset class="border-white border px-4 rounded-xl w-full">
+                        <legend class="font-bold px-1">Email</legend>
+                        <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" />
+                    </fieldset>
+                    <fieldset class="border-white border px-4 rounded-xl w-full">
+                        <legend class="font-bold px-1">Telefone</legend>
+                        <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
+                    </fieldset>
+                </div>
+                <fieldset class="border-white border px-4 rounded-xl">
+                    <legend class="font-bold px-1">Mensagem</legend>
+                    <textarea v-model="formData['message']" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
                 </fieldset>
-            </div>
-
-            <fieldset class="border-white border-2 px-4 rounded-xl">
-                <legend class="font-bold px-1">Mensagem</legend>
-                <textarea v-model="formData['message']" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
-            </fieldset>
-            <button class="btn primary">Enviar</button>
-        </form>
-
-        <FooterItems data={data} class="w-1/2 md:w-full"></FooterItems>
+                <button class="btn primary">Enviar</button>
+            </form>
+            <FooterItems data={data} class="w-1/2 md:w-full"></FooterItems>
+        </div>
     </div>
 </footer>

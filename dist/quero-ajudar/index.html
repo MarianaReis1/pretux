@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
     <title>Pretux | Quero Ajudar</title>
   <link rel="stylesheet" href="/assets/quero-ajudar.ce8a9d00.css" />
-<link rel="stylesheet" href="/assets/index-quero-ajudar-servicos-sobre.343933b7.css" /></head>
+<link rel="stylesheet" href="/assets/index-quero-ajudar-servicos-sobre.3cdd5365.css" /></head>
 
   <body class="font-body font-normal bg-black-600 min-h-screen h-full relative text-white text-md overflow-x-hidden lg:text-base">
 
@@ -93,35 +93,33 @@
 		</div><!--]--></div></section>
 
     <footer id="contatos" class="absolute top-full bg-black-800 py-14 w-full">
-    <div class="max-w-[1280px] mx-auto px-6 flex justify-between items-start md:flex-col md:gap-10">
+    <div class="max-w-[1280px] mx-auto px-6 ">
+        <h1 class="alpha mb-4">Fale com a gente</h1>
 
-        <form class="flex flex-col gap-5 text-white text-base flex-shrink-1 w-1/2 md:w-full">
-            <h1 class="alpha">Fale com a gente</h1>
-
-            <fieldset class="border-white border-2 px-4 rounded-xl">
-                <legend class="font-bold px-1">Nome</legend>
-                <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado">
-            </fieldset>
-
-            <div class="flex gap-4 xs:flex-col">
-                <fieldset class="border-white border-2 px-4 rounded-xl w-full">
-                    <legend class="font-bold px-1">Email</legend>
-                    <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email">
+        <div class="flex justify-between items-start md:flex-col md:gap-10">
+            <form class="flex flex-col gap-5 text-white text-base flex-shrink-1 w-1/2 md:w-full">
+                <fieldset class="border-white border px-4 rounded-xl">
+                    <legend class="font-bold px-1">Nome</legend>
+                    <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado">
                 </fieldset>
-                <fieldset class="border-white border-2 px-4 rounded-xl w-full">
-                    <legend class="font-bold px-1">Telefone</legend>
-                    <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999">
+                <div class="flex gap-4 xs:flex-col">
+                    <fieldset class="border-white border px-4 rounded-xl w-full">
+                        <legend class="font-bold px-1">Email</legend>
+                        <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email">
+                    </fieldset>
+                    <fieldset class="border-white border px-4 rounded-xl w-full">
+                        <legend class="font-bold px-1">Telefone</legend>
+                        <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999">
+                    </fieldset>
+                </div>
+                <fieldset class="border-white border px-4 rounded-xl">
+                    <legend class="font-bold px-1">Mensagem</legend>
+                    <textarea v-model="formData['message']" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
                 </fieldset>
-            </div>
-
-            <fieldset class="border-white border-2 px-4 rounded-xl">
-                <legend class="font-bold px-1">Mensagem</legend>
-                <textarea v-model="formData['message']" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
-            </fieldset>
-            <button class="btn primary">Enviar</button>
-        </form>
-
-        <section class="max-w-[200px] text-xs md:mx-auto md:text-center w-1/2 md:w-full"><div class="font-light mb-10"><h1 class="font-bold mb-2">No Site</h1><ul class="mb-6"><!--[--><li><a href="/" class="">Página Inicial</a></li><li><a href="/sobre" class="">Sobre</a></li><li><a href="/quero-ajudar" class="">Quero Ajudar</a></li><li><a href="/servicos" class="">Serviços</a></li><!--]--></ul><h1 class="font-bold mb-2">Contato</h1><div class="mb-6"><a href="mailto:somos@pretux.com.br" class="">somos@pretux.com.br</a></div><h1 class="font-bold mb-2">Nas Redes</h1><ul class="flex flex-wrap justify-between gap-5"><!--[--><li><a class=""><img src="https://images.prismic.io/pretux/8bf59f94-6045-4a36-9082-7d6cc3ee61de_icon-medium.png?auto=compress,format" alt=""></a></li><li><a class=""><img src="https://images.prismic.io/pretux/5cd937c7-5450-4e0b-8b1d-9ea595ec9ea8_icon-linkedin.png?auto=compress,format" alt=""></a></li><li><a class=""><img src="https://images.prismic.io/pretux/5b0e004a-6541-4d26-981d-ba1366a96115_icon-instagram.png?auto=compress,format" alt=""></a></li><li><a class=""><img src="https://images.prismic.io/pretux/b1a12085-b59c-4a4b-befc-5b0ec3eb34b5_icon-facebook.png?auto=compress,format" alt=""></a></li><!--]--></ul></div><img src="https://images.prismic.io/pretux/c584025b-71b2-46fb-a6e1-456fb03f9cf8_logo-pretux-vertical.png?auto=compress,format" alt="" class="w-[100px]"></section>
+                <button class="btn primary">Enviar</button>
+            </form>
+            <section class="max-w-[200px] text-xs md:mx-auto md:text-center w-1/2 md:w-full"><div class="font-light mb-10"><h1 class="font-bold mb-2">No Site</h1><ul class="mb-6"><!--[--><li><a href="/" class="">Página Inicial</a></li><li><a href="/sobre" class="">Sobre</a></li><li><a href="/quero-ajudar" class="">Quero Ajudar</a></li><li><a href="/servicos" class="">Serviços</a></li><!--]--></ul><h1 class="font-bold mb-2">Contato</h1><div class="mb-6"><a href="mailto:somos@pretux.com.br" class="">somos@pretux.com.br</a></div><h1 class="font-bold mb-2">Nas Redes</h1><ul class="flex flex-wrap justify-between gap-5"><!--[--><li><a class=""><img src="https://images.prismic.io/pretux/8bf59f94-6045-4a36-9082-7d6cc3ee61de_icon-medium.png?auto=compress,format" alt=""></a></li><li><a class=""><img src="https://images.prismic.io/pretux/5cd937c7-5450-4e0b-8b1d-9ea595ec9ea8_icon-linkedin.png?auto=compress,format" alt=""></a></li><li><a class=""><img src="https://images.prismic.io/pretux/5b0e004a-6541-4d26-981d-ba1366a96115_icon-instagram.png?auto=compress,format" alt=""></a></li><li><a class=""><img src="https://images.prismic.io/pretux/b1a12085-b59c-4a4b-befc-5b0ec3eb34b5_icon-facebook.png?auto=compress,format" alt=""></a></li><!--]--></ul></div><img src="https://pretux.cdn.prismic.io/pretux/9e42f7f9-38f4-4b15-a5c0-02a8412e9254_logo-pretux-ver.svg" alt="" class="w-[100px]"></section>
+        </div>
     </div>
 </footer>
 
