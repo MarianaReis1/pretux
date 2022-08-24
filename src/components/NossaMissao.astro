@@ -16,6 +16,7 @@ const bgImg = `background-image: url('${data.primary.background_image.url}')`
 
         <div class="self-center">
             <div class="mb-20 lg:mb-0">
+
                 <h1 class="alpha mb-4">
                     { data.primary.title }
                 </h1>
@@ -25,9 +26,11 @@ const bgImg = `background-image: url('${data.primary.background_image.url}')`
                 <a class:list={[ 'btn lg:w-full', data.primary.button_style ]} href={data.primary.button_link.url}>
                     { data.primary.button_label }
                 </a>
+
             </div>
 
             <div class="lg:hidden">
+
                 <h1 class="alpha mb-11">
                     { data.primary.carousel_title }
                 </h1>
@@ -35,6 +38,8 @@ const bgImg = `background-image: url('${data.primary.background_image.url}')`
                 <CarouselNossaMissao data={data.items}></CarouselNossaMissao>
 
             </div>
+
         </div>
+
     </section>
 </ContentBlock>

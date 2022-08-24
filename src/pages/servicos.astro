@@ -20,11 +20,10 @@ const data = await getPage('servicos');
 
 				<div class="mb-auto md:border-b md:border-white/80 md:pb-3 md:mb-3 md:text-center">
 					<h1 class="font-bold mb-7.5 text-white text-7xl">Divulgar vaga</h1>
-					<div class="">
+					<div class="mb-7.5">
 						<p>Preencha o formulário com seu contato e os detalhes da vaga. Após avaliação, direcionaremos candidates excepcionais para você. Nosso coletivo é formado por designers de diversas especialidades e senioridades.</p>
 					</div>
-				</div>
-				<div class="mt-auto">
+
 					<h2 class="font-extrabold mb-3">
 						No Pretux você encontra:
 					</h2>
@@ -66,7 +65,7 @@ const data = await getPage('servicos');
 						<textarea v-model="formData['message']" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
 					</fieldset>
 
-					<button class="btn secondary mx-auto">Divulgar vaga</button>
+					<button class="btn secondary">Divulgar vaga</button>
 
 				</form>
 			</div>

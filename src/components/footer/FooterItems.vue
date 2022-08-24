@@ -10,7 +10,7 @@
 
 <template>
 
-    <section class="max-w-[250px] md:mx-auto md:text-center">
+    <section class="max-w-[200px] text-xs md:mx-auto md:text-center">
 
         <div class="font-light mb-10">
             <h1 class="font-bold mb-2">{{ data.site_map_title }}</h1>
@@ -35,7 +35,7 @@
             </ul>
         </div>
 
-        <img :src="data.logo.url" alt="" class="w-[245px] mx-auto"/>
+        <img :src="data.logo.url" alt="" class="w-[100px]"/>
 
     </section>
 
