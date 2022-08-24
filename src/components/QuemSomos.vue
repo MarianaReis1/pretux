@@ -11,7 +11,7 @@
             />
 
             <div class="max-w-[700px] py-8 w-full md:py-0 md:w-3/5">
-                <h1 class="alpha mb-5">
+                <h1 class="alpha mb-4">
                     {{ item.title }}
                 </h1>
                 <div class="xs:text-xxs" v-html="prismicH.asHTML(item.description)"></div>

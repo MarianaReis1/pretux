@@ -55,9 +55,10 @@ module.exports = {
 			},
 
 			spacing: {
-				13: '50px', // 90px
+				7.5: '1.875rem', // 30px
+				13: '3.125rem', // 90px
 				22: '5.625rem', // 90px
-				26: '100px',
+				26: '6.25rem', // 100px
 			},
 
 			gridTemplateColumns: {

@@ -1,6 +1,6 @@
 <script setup>
 
-    import { computed, ref } from 'vue';
+    import { ref } from 'vue';
 
     const props = defineProps({ 
         items: { type: Array, },
@@ -22,7 +22,7 @@
         <li v-for="item in items" :key="item.label">
             <a  :href="linkResolver(item.link)" 
                 :class="[
-                    'relative leading-10 tracking-wider before:absolute before:-bottom-[10px] before:-left-[7%] before:h-[3px] before:bg-brown-400 before:rounded-full before:w-[114%]',
+                    'relative leading-10 text-base tracking-wider before:absolute before:-bottom-[5px] before:-left-[15%] before:h-[3px] before:bg-brown-400 before:rounded-full before:w-[130%]',
                     linkResolver(item.link) == currentPage ? 'before:block' : 'before:hidden',
                 ]"
             >
@@ -40,7 +40,7 @@
         <li v-for="item in items" :key="item.label">
             <a  :href="linkResolver(item.link)" 
                 :class="[
-                    'relative leading-10 tracking-wider before:absolute before:-bottom-[10px] before:-left-[7%] before:h-[3px] before:bg-brown-400 before:rounded-full before:w-[114%]',
+                    'relative leading-10 text-base tracking-wider before:absolute before:-bottom-[5px] before:left-0 before:h-[3px] before:bg-brown-400 before:rounded-full before:w-[136px]',
                     linkResolver(item.link) == currentPage ? 'before:block' : 'before:hidden',
                 ]"
             >

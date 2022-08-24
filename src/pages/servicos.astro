@@ -4,16 +4,7 @@ import { getPage, getSlice } from '@/modules/prismic.js';
 //components
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
-
-//data
-const demi = {
-	hero: {
-		title: "Serviços",
-        subtitle: 'Nossa comunidade possui profissionais cobiçados de empresas como <span class="font-bold">Nubank, AMBEV Tech, Itaú, Grupo Fleury e iFood</span>. Além da diversidade em gêneros, orientação sexual e background, encontramos também a diversidade geográfica e de tempo de carreira.',
-		image: '/img/hero-servicos.png'
-	}
-}
-
+import ContentBlock from '@/components/ContentBlock.vue';
 
 const data = await getPage('servicos');
 ---
@@ -21,5 +12,67 @@ const data = await getPage('servicos');
 <BaseLayout title="Sobre">
 
 	<Hero data={getSlice('hero',data.body)}></Hero>
+
+	<ContentBlock class="py-14 md:py-6">
+		<div class="border-[3px] border-white flex justify-center rounded-2xl md:flex-col md:items-center">
+
+			<div class="flex flex-col justify-center px-16 py-11 w-5/12 lg:p-8 md:p-5 md:w-full">
+
+				<div class="mb-auto md:border-b md:border-white/80 md:pb-3 md:mb-3 md:text-center">
+					<h1 class="font-bold mb-7.5 text-white text-7xl">Divulgar vaga</h1>
+					<div class="">
+						<p>Preencha o formulário com seu contato e os detalhes da vaga. Após avaliação, direcionaremos candidates excepcionais para você. Nosso coletivo é formado por designers de diversas especialidades e senioridades.</p>
+					</div>
+				</div>
+				<div class="mt-auto">
+					<h2 class="font-extrabold mb-3">
+						No Pretux você encontra:
+					</h2>
+					<ul class="font-bold list-disc list-inside pl-2">
+						<li class="">UX Designers;</li>
+						<li class="">UX Writers;</li>
+						<li class="">UI Designers;</li>
+						<li class="">UX Researchers;</li>
+						<li class="">Procut Designers;</li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="bg-white w-7/12 px-14 py-20 lg:p-12 md:p-5 md:w-full">
+
+				<h2 class="font-bold max-w-[424px] mb-9 mx-auto text-center text-black-600">Quer aumentar a diversidade da sua empresa? Está no lugar certo.</h2>
+
+				<form class="flex flex-col gap-6 text-black-600 text-base" >
+
+					<fieldset class="border-black-600 border-2 px-4 rounded-xl">
+						<legend class="font-bold px-1">Nome</legend>
+						<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado" />
+					</fieldset>
+
+					<div class="flex gap-4 xs:flex-col">
+						<fieldset class="border-black-600 border-2 px-4 rounded-xl w-full">
+							<legend class="font-bold px-1">Email</legend>
+							<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" />
+						</fieldset>
+						<fieldset class="border-black-600 border-2 px-4 rounded-xl w-full">
+							<legend class="font-bold px-1">Telefone</legend>
+							<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
+						</fieldset>
+					</div>
+
+					<fieldset class="border-black-600 border-2 px-4 rounded-xl">
+						<legend class="font-bold px-1">Mensagem</legend>
+						<textarea v-model="formData['message']" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
+					</fieldset>
+
+					<button class="btn secondary mx-auto">Divulgar vaga</button>
+
+				</form>
+			</div>
+
+		</div>
+	</ContentBlock>
+
 
 </BaseLayout>

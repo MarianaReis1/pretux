@@ -1,5 +1,5 @@
 <template>
-	<ContentBlock class="bg-black-600 py-14 md:py-8 md:px-6">
+	<ContentBlock class="bg-black-600 py-14 md:py-6">
 		<div class="mb-22">
 			<h1 class="alpha mb-4">{{data.primary.title}}</h1>
 			<div v-html="prismicH.asHTML(data.primary.description)"></div>
