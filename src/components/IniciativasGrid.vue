@@ -10,7 +10,7 @@
 			<div v-for="item in data.items" :key="item.title" class="mx-2">
 				<div class="max-w-[189px] mx-auto w-full xs:max-w-[130px]">
 					<div class="aspect-square bg-white flex items-center justify-center mb-4 rounded-2xl p-2">
-						<img :src="item.image.url" alt=""/>
+						<img :src="item.img.url" :alt="item.img.alt"/>
 					</div>
 					<h1 class="font-bold mb-12 text-center text-base md:mb-4">
 						{{ item.title }}

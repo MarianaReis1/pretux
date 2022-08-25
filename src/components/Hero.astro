@@ -3,11 +3,11 @@ import ContentBlock from '@/components/ContentBlock.vue';
 import * as prismicH from '@prismicio/helpers';
 
 const { data } = Astro.props;
-let test  = ""
+
 const hasLogoArea = data.items.length > 1;
 ---
 
-<section class:list={['bg-top bg-cover bg-no-repeat', { 'pb-10': hasLogoArea } ]} style={'background-image: url(' + data.primary.background_image.url + ')'} >
+<section class:list={['bg-top bg-cover bg-no-repeat', { 'pb-10': hasLogoArea } ]} style={'background-image: url(' + data.primary.bg_img.url + ')'} >
 
     <ContentBlock class="px-26 py-32 md:pb-12 md:pt-30 md:px-0">
         <div class="max-w-[566px] md:text-center md:mx-auto">
@@ -15,10 +15,15 @@ const hasLogoArea = data.items.length > 1;
                 { data.primary.title }
             </h1>
             <div class="font-light leading-tight mb-5" set:html={prismicH.asHTML(data.primary.description)}></div>
-            {data.primary.button_label &&
+
+            {
+                data.primary.button_label &&
+
                 <a 
-                href={data.primary.button_link.slug} 
-                class:list={['btn', data.primary.button_style ]}>
+                    href={data.primary.button_link.slug} 
+                    target={data.primary.button_link.target} 
+                    class:list={['btn', data.primary.button_style ]}
+                >
                     { data.primary.button_label }
                 </a>
             }
@@ -32,8 +37,8 @@ const hasLogoArea = data.items.length > 1;
             <ul class="flex flex-wrap gap-5 max-w-[1280px] mx-auto md:justify-center md:gap-3">
                 {data.items && data.items.map((item) => (
                     <li >
-                        <a href={item.link.url}>
-                            <img src={item.logo.url} alt="" class="md:max-w-[70px]" />
+                        <a href={item.link.url} target={item.link.target}>
+                            <img src={item.img.url} alt={item.img.alt} class="md:max-w-[70px]" />
                         </a>
                     </li>
                 ))}

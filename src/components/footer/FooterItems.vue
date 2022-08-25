@@ -16,7 +16,7 @@
             <h1 class="font-bold mb-2">{{ data.site_map_title }}</h1>
             <ul class="mb-6">
                 <li v-for="item in data.site_map_items" :key="item.label">
-                    <a :href="linkResolver(item.link)" class="">{{ item.label }}</a>
+                    <a :href="linkResolver(item.link)" :target="item.link.target" class="">{{ item.label }}</a>
                 </li>
             </ul>
 
@@ -28,14 +28,14 @@
             <h1 class="font-bold mb-2">{{ data.social_media_title }}</h1>
             <ul class="flex flex-wrap justify-start gap-5">
                 <li v-for="item in data.social_media_items" :key="item.link">
-                    <a :href="item.link.url" class="">
-                        <img :src="item.icon.url" alt="">
+                    <a :href="item.link.url" :target="item.link.target" class="">
+                        <img :src="item.icon.url" :alt="item.icon.alt">
                     </a>
                 </li>
             </ul>
         </div>
 
-        <img :src="data.logo.url" alt="" class="w-[100px]"/>
+        <img :src="data.logo.url" :alt="data.logo.alt" class="w-[100px]"/>
 
     </section>
 

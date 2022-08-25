@@ -5,7 +5,7 @@
 
             <Slide v-for="slide in data" :key="slide.img.url">
                 <div class="bg-black-700/20 grid place-items-center p-2 rounded-2xl w-full max-w-[193px] mx-2">
-                    <img :src="slide.img.url" alt="" class="w-full h-full object-contain" />
+                    <img :src="slide.img.url" :alt="slide.img.alt" class="w-full h-full object-contain" />
                 </div>
             </Slide>
 

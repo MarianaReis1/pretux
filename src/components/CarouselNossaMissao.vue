@@ -3,8 +3,8 @@
     <div class="relative">
         <carousel :settings="settings" data-carousel="cta">
             <slide v-for="slide in data" :key="slide" >
-                <a :href="slide.carousel_link" class="aspect-square bg-black-700/20 grid place-items-center p-2 rounded-2xl w-full max-w-[193px] mx-2">
-                    <img :src="slide.carousel_image.url" alt="" class="w-full h-full object-contain" />
+                <a :href="slide.link.url" :target="slide.link.target" class="aspect-square bg-black-700/20 grid place-items-center p-2 rounded-2xl w-full max-w-[193px] mx-2">
+                    <img :src="slide.img.url" :alt="slide.img.alt" class="w-full h-full object-contain" />
                 </a>
             </slide>
             <template #addons>

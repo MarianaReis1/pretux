@@ -5,14 +5,14 @@ import * as prismicH from '@prismicio/helpers';
 
 const { data } = Astro.props;
 
-const bgImg = `background-image: url('${data.primary.background_image.url}')`
+const bgImg = `background-image: url(')`
 ---
 
 <ContentBlock class="bg-black-600 bg-no-repeat bg-cover py-28 px-26 3xl:p-14 md:px-0 md:py-6" style={bgImg}>
 
     <section class="flex justify-between gap-10 lg:flex-col lg:gap-5">
 
-        <img src={data.primary.image.url} alt="" class="max-w-[420px] w-full object-cover object-right-top rounded-2xl mx-auto lg:aspect-video lg:object-top" />
+        <img src={data.primary.img.url} alt={data.primary.img.alt} class="max-w-[420px] w-full object-cover object-right-top rounded-2xl mx-auto lg:aspect-video lg:object-top" />
 
         <div class="self-center">
             <div class="mb-20 lg:mb-0">

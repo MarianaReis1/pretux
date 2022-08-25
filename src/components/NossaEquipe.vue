@@ -17,7 +17,7 @@
                     <div class="border-t-[3px] my-4 w-1/4"></div>
                     <p>{{ item.address }}</p>
                 </div>
-                <img :src="item.image.url" alt="" class="absolute top-0 left-0 object-cover rounded-lg h-full w-full -z-20" />
+                <img :src="item.img.url" :alt="item.img.alt" class="absolute top-0 left-0 object-cover rounded-lg h-full w-full -z-20" />
                 <div class="absolute top-0 left-0 bg-gradient-to-b from-black-600/0 via-black-600/0 to-black-600/90 object-cover rounded-lg h-full w-full -z-20"></div>
             </div>
 
@@ -31,7 +31,6 @@
 
 <script setup>
 import { computed, ref } from 'vue';
-import * as prismicH from '@prismicio/helpers';
 
 const props = defineProps({ data: { type: Object } })
 
