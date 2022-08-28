@@ -5,7 +5,7 @@ import * as prismicH from '@prismicio/helpers';
 
 const { data } = Astro.props;
 
-const bgImg = `background-image: url(')`
+const bgImg = `background-image: url('${data.primary.bg_img.url}')`
 ---
 
 <ContentBlock class="bg-black-600 bg-no-repeat bg-cover py-28 px-26 3xl:p-14 md:px-0 md:py-6" style={bgImg}>
@@ -15,6 +15,7 @@ const bgImg = `background-image: url(')`
         <img src={data.primary.img.url} alt={data.primary.img.alt} class="max-w-[420px] w-full object-cover object-right-top rounded-2xl mx-auto lg:aspect-video lg:object-top" />
 
         <div class="self-center">
+
             <div class="mb-20 lg:mb-0">
 
                 <h1 class="alpha mb-4">
@@ -23,7 +24,7 @@ const bgImg = `background-image: url(')`
 
                 <div class="mb-10" set:html={prismicH.asHTML(data.primary.description)}></div>
 
-                <a class:list={[ 'btn lg:w-full', data.primary.button_style ]} href={data.primary.button_link.url}>
+                <a class:list={[ 'btn', data.primary.button_style ]} href={data.primary.button_link.url}>
                     { data.primary.button_label }
                 </a>
 
@@ -42,4 +43,5 @@ const bgImg = `background-image: url(')`
         </div>
 
     </section>
+
 </ContentBlock>

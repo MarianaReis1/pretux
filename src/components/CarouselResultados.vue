@@ -31,7 +31,6 @@
 
     const settings = {
         itemsToShow: 1,
-        wrapAround: true,
         snapAlign: "start",
     }
 

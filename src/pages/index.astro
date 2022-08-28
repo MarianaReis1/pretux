@@ -1,6 +1,6 @@
 ---
 
-import { getSingleSlice, getSlice } from '@/modules/prismic.js';
+import { getSingleType, getSlice } from '@/modules/prismic.js';
 import fallback from '@/modules/fallback-content.js';
 
 //components
@@ -12,7 +12,7 @@ import NossaMissao from '@/components/NossaMissao.astro';
 import OutrosParceiros from '@/components/OutrosParceiros.astro';
 import IniciativasGrid from '@/components/IniciativasGrid.vue';
 
-const data = await getSingleSlice('home') || fallback.home;
+const data = await getSingleType('home') || fallback.home;
 
 ---
 

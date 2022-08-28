@@ -26,7 +26,7 @@
             </div>
 
             <h1 class="font-bold mb-2">{{ data.social_media_title }}</h1>
-            <ul class="flex flex-wrap justify-start gap-5">
+            <ul class="flex flex-wrap justify-start gap-5 md:justify-center">
                 <li v-for="item in data.social_media_items" :key="item.link">
                     <a :href="item.link.url" :target="item.link.target" class="">
                         <img :src="item.icon.url" :alt="item.icon.alt">
@@ -35,7 +35,7 @@
             </ul>
         </div>
 
-        <img :src="data.logo.url" :alt="data.logo.alt" class="w-[100px]"/>
+        <img :src="data.logo.url" :alt="data.logo.alt" class="w-[90px] md:mx-auto"/>
 
     </section>
 

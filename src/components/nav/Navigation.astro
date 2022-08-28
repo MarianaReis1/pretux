@@ -1,5 +1,5 @@
 ---
-import { getSingleSlice } from '@/modules/prismic.js';
+import { getSingleType } from '@/modules/prismic.js';
 import fallback from '@/modules/fallback-content.js';
 
 import NavigationItems from '@/components/nav/NavigationItems.vue';
@@ -9,7 +9,7 @@ import logo from '@img/logo-pretux.svg';
 
 const currentPath = new URL(Astro.request.url).pathname;
 
-const data = await getSingleSlice('nav') || fallback.nav;
+const data = await getSingleType('nav') || fallback.nav;
 
 ---
 

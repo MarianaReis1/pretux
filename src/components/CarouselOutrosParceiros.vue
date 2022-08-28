@@ -4,9 +4,9 @@
         <Carousel data-carousel="parceiros" :settings="settings" :breakpoints="breakpoints">
 
             <Slide v-for="slide in data" :key="slide.img.url">
-                <div class="bg-black-700/20 grid place-items-center p-2 rounded-2xl w-full max-w-[193px] mx-2">
+                <a :href="slide.link.url" :target="slide.link.target" class="bg-black-700/20 grid place-items-center p-2 rounded-2xl w-full max-w-[193px] mx-2">
                     <img :src="slide.img.url" :alt="slide.img.alt" class="w-full h-full object-contain" />
-                </div>
+                </a>
             </Slide>
 
             <template #addons>
@@ -26,7 +26,6 @@
 
     const settings = {
         itemsToShow: 2,
-        wrapAround: true,
         snapAlign: "start",
     };
 

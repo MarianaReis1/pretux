@@ -1,8 +1,8 @@
 ---
-import { getSingleSlice } from '@/modules/prismic.js';
+import { getSingleType } from '@/modules/prismic.js';
 import FooterItems from '@/components/footer/FooterItems.vue';
 
-const data = await getSingleSlice('footer');
+const data = await getSingleType('footer');
 ---
 
 
@@ -28,7 +28,7 @@ const data = await getSingleSlice('footer');
                 </div>
                 <fieldset class="border-white border px-4 rounded-xl">
                     <legend class="font-bold px-1">Mensagem</legend>
-                    <textarea v-model="formData['message']" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
+                    <textarea class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
                 </fieldset>
                 <button class="btn primary">Enviar</button>
             </form>

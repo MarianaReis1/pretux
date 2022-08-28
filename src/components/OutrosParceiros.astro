@@ -8,12 +8,12 @@ const { data } = Astro.props;
 
 <ContentBlock class="bg-black-700/20 py-14 md:py-6 md:bg-white">
 
-    <h1 class="alpha mb-4 md:text-center md:mb-8 md:text-black-800">
-        { data.primary.title}
-    </h1>
-
-    <p class="mb-10 md:hidden" set:html={data.primary.description}></p>
-
-    <CarouselOutrosParceiros  client:load data={data.items} ></CarouselOutrosParceiros>
+    <div class="md:bg-black-600 md:rounded-lg md:px-6 md:py-4">
+        <h1 class="alpha mb-4 md:text-center md:mb-8">
+            { data.primary.title}
+        </h1>
+        <p class="mb-10 md:hidden" set:html={data.primary.description}></p>
+        <CarouselOutrosParceiros client:load data={data.items}></CarouselOutrosParceiros>
+    </div>
 
 </ContentBlock>
