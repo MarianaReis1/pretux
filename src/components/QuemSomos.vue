@@ -23,8 +23,9 @@
 </template>
 
 <script setup>
+
 import * as prismicH from '@prismicio/helpers';
 
 const props = defineProps({ data: { type: Object } })
-console.log(props.data.items)
+
 </script>
