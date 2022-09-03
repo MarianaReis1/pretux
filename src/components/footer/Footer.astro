@@ -11,24 +11,24 @@ const data = await getSingleType('footer');
         <h1 class="alpha mb-4">Fale com a gente</h1>
 
         <div class="flex justify-between items-start md:flex-col md:gap-10">
-            <form class="flex flex-col gap-5 text-white text-base flex-shrink-1 w-1/2 md:w-full" >
+            <form action="https://formeezy.com/api/v1/forms/631330a45146a1000954f09e/submissions" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 text-white text-base flex-shrink-1 w-1/2 md:w-full" >
                 <fieldset class="border-white border px-4 rounded-xl">
                     <legend class="font-bold px-1">Nome</legend>
-                    <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado" />
+                    <input class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="nome" placeholder="Digite seu nome ou como prefere ser chamado" required />
                 </fieldset>
                 <div class="flex gap-4 xs:flex-col">
                     <fieldset class="border-white border px-4 rounded-xl w-full">
                         <legend class="font-bold px-1">Email</legend>
-                        <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" />
+                        <input class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" required />
                     </fieldset>
                     <fieldset class="border-white border px-4 rounded-xl w-full">
                         <legend class="font-bold px-1">Telefone</legend>
-                        <input value="" class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
+                        <input class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
                     </fieldset>
                 </div>
                 <fieldset class="border-white border px-4 rounded-xl">
                     <legend class="font-bold px-1">Mensagem</legend>
-                    <textarea class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
+                    <textarea class="bg-transparent leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" required placeholder="Informe como você pode ajudar"></textarea>
                 </fieldset>
                 <button class="btn primary">Enviar</button>
             </form>

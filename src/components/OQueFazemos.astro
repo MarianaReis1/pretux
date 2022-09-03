@@ -1,5 +1,6 @@
 ---
 import ContentBlock from '@/components/ContentBlock.vue';
+import CircleAnimation from '@/components/CircleAnimation.vue';
 
 const bg = (image) => `background-image: url('${image}');`;
 
@@ -12,7 +13,7 @@ const { data } = Astro.props;
         { data.primary.title }
     </h1>
 
-    <div class="flex gap-10 justify-between flex-wrap">
+    <div class="flex gap-10 justify-between flex-wrap relative z-10">
         {
             data.items.map((item) => (
                 <Fragment>
@@ -29,5 +30,9 @@ const { data } = Astro.props;
             ))
         }
     </div>
+
+    <CircleAnimation client:load class="-top-6 left-[20%]"></CircleAnimation>
+    <CircleAnimation client:load class="top-20 -right-8"></CircleAnimation>
+    <CircleAnimation client:load class="bottom-10 -left-[10%] 5xl:-left-2 5xl:-bottom-20"></CircleAnimation>
 
 </ContentBlock>

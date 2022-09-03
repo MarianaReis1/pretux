@@ -1,5 +1,5 @@
 ---
-import { getPage } from '@/modules/prismic.js';
+import { getPage,  getSlice } from '@/modules/prismic.js';
 import * as prismicH from '@prismicio/helpers';
 import fallback from '@/modules/fallback-content.js';
 
@@ -9,6 +9,7 @@ import ContentBlock from '@/components/ContentBlock.vue';
 
 
 const data = await getPage('quero-ajudar')  || fallback.quero_ajudar;
+const slice = getSlice('como_ajudar', data.body)
 ---
 
 <BaseLayout title="Quero Ajudar">
@@ -17,32 +18,32 @@ const data = await getPage('quero-ajudar')  || fallback.quero_ajudar;
 		<div class="flex items-start justify-between gap-22 lg:gap-6 lg:flex-col">
 
 			<div class="w-1/2 h-full lg:w-full">
-				<img src={data.form_img.url} alt="" class="h-[677px] max-w-[571px] object-cover object-left-top w-full rounded-xl lg:mx-auto lg:h-auto lg:aspect-video" />
+				<img src={slice.primary.img.url} alt="" class="h-[677px] max-w-[571px] object-cover object-left-top w-full rounded-xl lg:mx-auto lg:h-auto lg:aspect-video" />
 			</div>
 
 			<div class="flex-shrink-0 w-1/2 lg:w-full">
 				<div class="mb-20 lg:mb-10">
 					<h1 class="alpha mb-4 text-black">
-						{data.form_title}
+						{slice.primary.title}
 					</h1>
-					<div class="editorial text-black" set:html={prismicH.asHTML(data.form_description)}></div>
+					<div class="editorial text-black" set:html={prismicH.asHTML(slice.primary.description)}></div>
 				</div>
 
-				<form class="flex flex-col gap-6 text-black-600 text-base" >
+				<form action="https://formeezy.com/api/v1/forms/63136f325fcc2f0009aac0f9/submissions" method="POST" enctype="multipart/form-data" class="flex flex-col gap-6 text-black-600 text-base" >
 
 					<fieldset class="border-black-600 border-2 px-4 rounded-xl">
 						<legend class="font-bold px-1">Nome</legend>
-						<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado" />
+						<input class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado" required />
 					</fieldset>
 
 					<div class="flex gap-4 xs:flex-col">
 						<fieldset class="border-black-600 border-2 px-4 rounded-xl w-full">
 							<legend class="font-bold px-1">Email</legend>
-							<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" />
+							<input class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" required />
 						</fieldset>
 						<fieldset class="border-black-600 border-2 px-4 rounded-xl w-full">
 							<legend class="font-bold px-1">Telefone</legend>
-							<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
+							<input class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
 						</fieldset>
 					</div>
 
@@ -76,7 +77,7 @@ const data = await getPage('quero-ajudar')  || fallback.quero_ajudar;
 
 					<fieldset class="border-black-600 border-2 px-4 rounded-xl">
 						<legend class="font-bold px-1">Mensagem</legend>
-						<textarea v-model="formData['message']" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
+						<textarea class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar" required></textarea>
 					</fieldset>
 					<button class="btn secondary">Ajudar</button>
 				</form>

@@ -44,27 +44,27 @@ const data = await getPage('servicos');
 					Quer aumentar a diversidade da sua empresa? Está no lugar certo.
 				</h2>
 
-				<form class="flex flex-col gap-6 text-black-600 text-base" >
+				<form action="https://formeezy.com/api/v1/forms/63136f325fcc2f0009aac0f9/submissions" method="POST" enctype="multipart/form-data" class="flex flex-col gap-6 text-black-600 text-base" >
 
 					<fieldset class="border-black-600 border-2 px-4 rounded-xl">
 						<legend class="font-bold px-1">Nome</legend>
-						<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado" />
+						<input class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="name" placeholder="Digite seu nome ou como prefere ser chamado" />
 					</fieldset>
 
 					<div class="flex gap-4 xs:flex-col">
 						<fieldset class="border-black-600 border-2 px-4 rounded-xl w-full">
 							<legend class="font-bold px-1">Email</legend>
-							<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" />
+							<input class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="email" placeholder="Deixe aqui seu melhor email" />
 						</fieldset>
 						<fieldset class="border-black-600 border-2 px-4 rounded-xl w-full">
 							<legend class="font-bold px-1">Telefone</legend>
-							<input value="" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
+							<input class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" type="text" name="telefone" placeholder="+99 (99) 99999-9999" />
 						</fieldset>
 					</div>
 
 					<fieldset class="border-black-600 border-2 px-4 rounded-xl">
 						<legend class="font-bold px-1">Mensagem</legend>
-						<textarea v-model="formData['message']" class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
+						<textarea class="leading-loose pb-2 px-1 w-full opacity-100 text-xs focus-visible:outline-none" rows="5" name="mensagem" placeholder="Informe como você pode ajudar"></textarea>
 					</fieldset>
 
 					<button class="btn secondary">Divulgar vaga</button>

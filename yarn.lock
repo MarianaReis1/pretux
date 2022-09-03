@@ -748,7 +748,7 @@ ast-types@0.14.2, ast-types@^0.14.2:
   dependencies:
     tslib "^2.0.1"
 
-astro@^1.0.6:
+astro@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/astro/-/astro-1.0.6.tgz#9978c31d7d8359f951a7800e737dddfdfdba2641"
   integrity sha512-QAkdkzP3PbauiO4YnOgVTWY6z26heKruoXW9TnN8Bbmwtf7DUFIchi6CFSAVYSONX8XtRnj+p6fCkk06OWfJ4w==
@@ -1645,6 +1645,11 @@ gray-matter@^4.0.3:
     kind-of "^6.0.2"
     section-matter "^1.0.0"
     strip-bom-string "^1.0.0"
+
+gsap@^3.11.0:
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.11.0.tgz#5a45da0f35b49e2c479e1e274feb6ac51e86478b"
+  integrity sha512-TV5aFGqXht+0o/CelnhCikSe3QGeG+q1XA/fyFFsMzesILHgWgFWIz0NuXIgcMaL5h7MG2l+j0BTupS5YyYkrw==
 
 has-flag@^3.0.0:
   version "3.0.0"
