@@ -74,8 +74,6 @@
         }
     }
 
-
-
     .editorial {
         @apply mx-3 text-black text-center;
 
