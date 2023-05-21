@@ -10,7 +10,7 @@ const bgImg = `background-image: url('${data.primary.bg_img.url}')`
 
 <ContentBlock class="bg-black-600 bg-no-repeat bg-cover py-28 px-26 3xl:p-14 md:px-0 md:py-6" style={bgImg}>
 
-    <section class="flex items-center justify-start gap-10 mb-14 lg:flex-col lg:gap-5">
+    <div class="flex items-center justify-start gap-10 mb-14 lg:flex-col lg:gap-5">
 
         <img src={data.primary.img.url} alt={data.primary.img.alt} class="max-w-[420px] w-full object-cover object-right-top rounded-2xl mx-auto lg:aspect-video lg:object-top" />
 
@@ -28,10 +28,11 @@ const bgImg = `background-image: url('${data.primary.bg_img.url}')`
 
         </div>
 
-    </section>
+    </div>
 
-    <section v-if=""data.items>
-
+    {
+        data.items && 
+    
         <div class="mb-14">
             <h1 class="alpha mb-2">
                 { data.primary.carousel_title }
@@ -42,7 +43,6 @@ const bgImg = `background-image: url('${data.primary.bg_img.url}')`
         </div>
 
         <CarouselNossaMissao client:load data={data.items}></CarouselNossaMissao>
-
-    </div>
+    }
 
 </ContentBlock>

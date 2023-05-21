@@ -16,3 +16,7 @@ html {
 .bg-gradient--primary {
     background: linear-gradient(93.91deg, theme('colors.green.DEFAULT') 23.98%, theme('colors.blue.DEFAULT') 65.5%, theme('colors.purple.DEFAULT') 112.55%);
 }
+
+.bg-gradient--secondary {
+    background: linear-gradient(138.01deg, rgba(0, 0, 0, 0.7) 44.56%, rgba(85, 80, 65, 0.506276) 71.27%, rgba(232, 218, 178, 0.17) 82.91%, rgba(71, 67, 55, 0.537423) 82.91%);
+}

@@ -1,9 +1,10 @@
 ---
-import { getPage, getSlice } from '@/modules/prismic.js';
+// @ts-nocheck
+import { getPage } from '@/modules/prismic.js';
+import * as prismicH from '@prismicio/helpers';
 
 //components
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import QuemSomos from '@/components/QuemSomos.vue';
 import NossaEquipe from '@/components/NossaEquipe.vue';
 
 const data = await getPage('sobre');
@@ -13,9 +14,21 @@ const data = await getPage('sobre');
 
 	<main class="mt-20 md:mt-10">
 
-		<QuemSomos data={getSlice('quem_somos',data.body)}></QuemSomos>
+		<section class="flex items-center justify-start gap-10 max-w-[1280px] mx-auto mb-20 px-6">
 
-		<NossaEquipe client:load data={getSlice('nossa_equipe',data.body)}></NossaEquipe>
+			<img src={data.main_image.url} alt="group image"/>
+
+			<div>
+				<h1 class="alpha mb-8">{ data.title1 }</h1>
+
+				<div class="editorial text-md" set:html={prismicH.asHTML(data.description)}></div>
+			</div>
+
+		</section>
+
+		<NossaEquipe client:load data={data.body[0]}></NossaEquipe>
+
+		<NossaEquipe client:load data={data.body[1]} show-bg={true}></NossaEquipe>
 
 	</main>
 

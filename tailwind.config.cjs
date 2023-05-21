@@ -75,10 +75,6 @@ module.exports = {
 				26: '6.25rem', // 100px
 			},
 
-			gridTemplateColumns: {
-				'autofit' : 'repeat(auto-fill, minmax(200px, 1fr))'
-			}
-
 		},
 	},
 
