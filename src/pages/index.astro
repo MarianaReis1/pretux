@@ -9,8 +9,6 @@ import Hero from '@/components/Hero.astro';
 import OQueFazemos from '@/components/OQueFazemos.astro';
 import Resultados from '@/components/Resultados.astro';
 import NossaMissao from '@/components/NossaMissao.astro';
-import OutrosParceiros from '@/components/OutrosParceiros.astro';
-import IniciativasGrid from '@/components/IniciativasGrid.vue';
 
 const data = await getSingleType('home') || fallback.home;
 
@@ -25,9 +23,5 @@ const data = await getSingleType('home') || fallback.home;
 	<Resultados data={getSlice('resultados',data.body)}></Resultados>
 
 	<NossaMissao data={getSlice('missao',data.body)}></NossaMissao>
-
-	<OutrosParceiros data={getSlice('carousel_outros_parceiros',data.body)}></OutrosParceiros>
-
-	<IniciativasGrid data={getSlice('iniciativas_rolando',data.body)}></IniciativasGrid>
 
 </BaseLayout>

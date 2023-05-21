@@ -1,14 +1,14 @@
 <template>
 
     <div class="relative">
-        <carousel :settings="settings" data-carousel="cta">
-            <slide v-for="slide in data" :key="slide" >
-                <a :href="slide.link.url" :target="slide.link.target" class="aspect-square bg-black-700/20 grid place-items-center p-2 rounded-2xl w-full max-w-[193px] mx-2">
-                    <img :src="slide.img.url" :alt="slide.img.alt" class="w-full h-full object-contain" />
+        <Carousel :settings="settings" data-carousel="cta" :breakpoints="breakpoints">
+            <Slide v-for="slide in data" :key="slide" >
+                <a :href="slide.link.url" :target="slide.link.target" class="bg-white py-4 px-6 rounded-2xl w-full max-w-[250px] h-[94px] mx-2">
+                    <img :src="slide.img.url" :alt="slide.img.alt" class="h-full object-contain mx-auto" />
                 </a>
-            </slide>
+            </Slide>
             <template #addons>
-                <navigation />
+                <Navigation />
             </template>
         </carousel>
     </div>
@@ -17,14 +17,19 @@
 
 <script setup>
 
-    import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
+    import { Carousel, Slide, Navigation } from 'vue3-carousel';
 
     const props = defineProps({ data: { type: Object } })
 
     const settings = {
-        itemsToShow: 3,
+        itemsToShow: 2,
         wrapAround: true,
         snapAlign: "start",
+    }
+    const breakpoints = {
+        1024: {
+            itemsToShow: 4,
+        },
     }
 
 </script>
@@ -32,42 +37,21 @@
 <style lang="scss">
 
     [data-carousel="cta"] {
-
-        &.carousel {
-            @apply max-w-[550px] static;
-        }
-
-        .carousel__track {
-            @apply justify-between;
-        }
-
-        .carousel__prev {
-            @apply hidden;
-        }
-
-        .carousel__next {
+        .carousel__prev, .carousel__next {
             @apply bg-transparent w-14 h-14;
 
             & svg {
                 @apply w-14 h-14;
             }
-
-            @screen 5xl {
-                @apply -right-3;
-            }
-
-            @screen md {
-                @apply hidden;
-            }
         }
 
-        .carousel__pagination-button {
-            @apply bg-black/50 w-2.5 h-2.5 rounded-full;
-        }
+        // .carousel__pagination-button {
+        //     @apply bg-black/50 w-2.5 h-2.5 rounded-full;
+        // }
 
-        .carousel__pagination-button--active {
-            @apply bg-white;
-        }
+        // .carousel__pagination-button--active {
+        //     @apply bg-white;
+        // }
     }
 
 </style>

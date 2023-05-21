@@ -1,6 +1,6 @@
 <template>
     <section class="max-w-[1280px] mx-auto px-6 pb-26">
-        <h1 class="alpha mb-11 text-center">
+        <h1 class="alpha mb-14 text-center">
             {{ data.primary.title }}
         </h1>
         <div class="flex flex-wrap gap-12 justify-center mx-auto mb-12">

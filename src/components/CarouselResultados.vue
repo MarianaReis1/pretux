@@ -80,7 +80,7 @@
         @apply mx-3 text-black text-center;
 
         & em {
-            @apply text-9xl not-italic block;
+            @apply text-9xl not-italic block text-brown-700;
         }
     }
 

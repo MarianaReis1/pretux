@@ -46,8 +46,22 @@ module.exports = {
 				},
 
 				brown: {
-					400: '#E8DAB2'
-				}
+					400: '#E8DAB2',
+					700: '##BF7853',
+				},
+				
+				green: {
+					DEFAULT: '#488284',
+				},
+
+				blue: {
+					DEFAULT: '#223A92',
+				},
+
+				purple: {
+					DEFAULT: '#42225E',
+				},
+
 			},
 
 			dropShadow: {

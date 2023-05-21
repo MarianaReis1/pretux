@@ -10,38 +10,39 @@ const bgImg = `background-image: url('${data.primary.bg_img.url}')`
 
 <ContentBlock class="bg-black-600 bg-no-repeat bg-cover py-28 px-26 3xl:p-14 md:px-0 md:py-6" style={bgImg}>
 
-    <section class="flex justify-between gap-10 lg:flex-col lg:gap-5">
+    <section class="flex items-center justify-start gap-10 mb-14 lg:flex-col lg:gap-5">
 
         <img src={data.primary.img.url} alt={data.primary.img.alt} class="max-w-[420px] w-full object-cover object-right-top rounded-2xl mx-auto lg:aspect-video lg:object-top" />
 
-        <div class="self-center">
+        <div class="">
 
-            <div class="mb-20 lg:mb-0">
+            <h1 class="alpha mb-4">
+                { data.primary.title }
+            </h1>
 
-                <h1 class="alpha mb-4">
-                    { data.primary.title }
-                </h1>
+            <div class="mb-10" set:html={prismicH.asHTML(data.primary.description)}></div>
 
-                <div class="mb-10" set:html={prismicH.asHTML(data.primary.description)}></div>
-
-                <a class:list={[ 'btn', data.primary.button_style ]} href={data.primary.button_link.url}>
-                    { data.primary.button_label }
-                </a>
-
-            </div>
-
-            <div class="lg:hidden">
-
-                <h1 class="alpha mb-11">
-                    { data.primary.carousel_title }
-                </h1>
-
-                <CarouselNossaMissao data={data.items}></CarouselNossaMissao>
-
-            </div>
+            <a class:list={[ 'btn', data.primary.button_style ]} href={data.primary.button_link.url}>
+                { data.primary.button_label }
+            </a>
 
         </div>
 
     </section>
+
+    <section v-if=""data.items>
+
+        <div class="mb-14">
+            <h1 class="alpha mb-2">
+                { data.primary.carousel_title }
+            </h1>
+            <p>
+                { data.primary.carousel_subtitle }
+            </h1>
+        </div>
+
+        <CarouselNossaMissao client:load data={data.items}></CarouselNossaMissao>
+
+    </div>
 
 </ContentBlock>

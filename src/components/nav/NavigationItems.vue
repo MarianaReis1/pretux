@@ -22,14 +22,14 @@
         <li v-for="item in items" :key="item.label">
             <a  :href="linkResolver(item.link)" 
                 :class="[
-                    'relative leading-10 text-base tracking-wider before:absolute before:-bottom-[5px] before:-left-[15%] before:h-[3px] before:bg-brown-400 before:rounded-full before:w-[130%]',
+                    'relative leading-10 text-base tracking-wider before:absolute before:-bottom-[5px] before:-left-[15%] before:h-[3px] before:bg-gradient-to-r before:from-blue before:to-green before:rounded-full before:w-[130%]',
                     linkResolver(item.link) == currentPage ? 'before:block' : 'before:hidden',
                 ]"
             >
                 {{ item.label }}
             </a>
         </li>
-        <li>
+        <li class="ml-20">
             <a href="#contatos">Contatos</a>
         </li>
 

@@ -1,13 +1,13 @@
 .btn {
 
-    @apply inline-block min-w-[200px] py-4 px-10 rounded-lg w-fit text-center md:max-w-full md:text-base xs:w-full; 
+    @apply inline-block min-w-[280px] py-4 px-10 rounded-lg w-fit text-center md:max-w-full md:min-w-fit md:text-base xs:w-full; 
 
     &.primary {
         @apply bg-brown-400 font-semibold font-display text-black-400;
     }
 
     &.secondary {
-        @apply bg-black-600 font-semibold font-display text-white;
+        @apply bg-gradient--primary font-semibold font-display text-white shadow-sm;
     }
 
     &.tertiary {

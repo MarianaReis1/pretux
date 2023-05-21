@@ -12,3 +12,7 @@ html {
         @apply mb-2;
     }
 }
+
+.bg-gradient--primary {
+    background: linear-gradient(93.91deg, theme('colors.green.DEFAULT') 23.98%, theme('colors.blue.DEFAULT') 65.5%, theme('colors.purple.DEFAULT') 112.55%);
+}

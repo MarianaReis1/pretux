@@ -1,7 +1,5 @@
 <script setup>
 
-    import logo from '@img/logo-pretux.svg';
-
     const props = defineProps({ data: { type: Object }});
 
     const linkResolver = (link) => link.type == "home" ? '/' : '/' + link.slug;
