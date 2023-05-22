@@ -1,9 +1,9 @@
 .btn {
 
-    @apply inline-block min-w-[280px] py-4 px-10 rounded-lg w-fit text-center md:max-w-full md:min-w-fit md:text-base xs:w-full; 
+    @apply inline-block max-w-[280px] py-4 px-10 rounded-lg w-full text-center md:text-base; 
 
     &.primary {
-        @apply bg-brown-400 font-semibold font-display text-black-400;
+        @apply bg-brown-400 font-semibold font-display text-black-400 max-w-none;
     }
 
     &.secondary {

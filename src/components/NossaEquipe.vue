@@ -4,7 +4,7 @@
             {{ data.primary.title }}
         </h1>
 
-        <div class="flex flex-wrap items-center justify-around gap-8 mx-auto mb-12">
+        <div class="flex flex-wrap items-center justify-around gap-8 mx-auto mb-12 8xl:gap-4">
 
             <div 
                 v-for="item in dataToShow" :key="item.name" 

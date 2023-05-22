@@ -22,14 +22,17 @@
     const props = defineProps({ data: { type: Object } })
 
     const settings = {
-        itemsToShow: 2,
+        itemsToShow: 1,
         wrapAround: true,
         snapAlign: "start",
     }
     const breakpoints = {
+        767: {
+            itemsToShow: 2,
+        },
         1024: {
             itemsToShow: 4,
-        },
+        }
     }
 
 </script>

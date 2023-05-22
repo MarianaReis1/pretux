@@ -10,9 +10,9 @@ const hasLogoArea = data.items.length > 1;
 
 <section class:list={['bg-top bg-cover bg-no-repeat', { 'pb-10': hasLogoArea } ]} style={'background-image: url(' + data.primary.bg_img.url + ')'} >
 
-    <ContentBlock class="px-26 py-32 md:pb-12 md:pt-30 md:px-0">
-        <div class="max-w-[566px] md:text-center md:mx-auto">
-            <h1 class="font-bold text-10xl md:text-7xl mb-4">
+    <ContentBlock class="px-26 py-32 lg:py-20 lg:px-6">
+        <div class="max-w-[566px]">
+            <h1 class="font-bold text-10xl mb-4 md:text-7xl">
                 { data.primary.title }
             </h1>
             <div class="font-light leading-tight mb-10" set:html={prismicH.asHTML(data.primary.description)}></div>
@@ -20,7 +20,7 @@ const hasLogoArea = data.items.length > 1;
             {
                 data.items.length && 
 
-                <div class="flex items-center justify-start gap-7.5">
+                <div class="flex items-center justify-start gap-7.5 md:flex-col md:items-start">
                     {
                         data.items.map(item => (
                             <a 
