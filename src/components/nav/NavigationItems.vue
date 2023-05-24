@@ -29,7 +29,7 @@
                 {{ item.label }}
             </a>
         </li>
-        <li class="ml-20">
+        <li>
             <a href="#contatos">Contatos</a>
         </li>
 
